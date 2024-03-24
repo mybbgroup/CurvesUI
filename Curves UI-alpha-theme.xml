@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <theme name="Curves UI-alpha" version="1837">
 	<properties>
-		<templateset><![CDATA[4]]></templateset>
+		<templateset><![CDATA[3]]></templateset>
 		<editortheme><![CDATA[modern-2.css]]></editortheme>
 		<imgdir><![CDATA[images]]></imgdir>
 		<logo><![CDATA[]]></logo>
@@ -11,252 +11,53 @@
 		<disporder><![CDATA[a:18:{s:10:"global.css";i:0;s:10:"usercp.css";i:2;s:9:"modcp.css";i:3;s:16:"star_ratings.css";i:4;s:14:"showthread.css";i:5;s:17:"thread_status.css";i:6;s:8:"css3.css";i:7;s:15:"color_black.css";i:8;s:14:"color_calm.css";i:9;s:14:"color_dawn.css";i:10;s:15:"color_earth.css";i:11;s:15:"color_flame.css";i:12;s:14:"color_leaf.css";i:13;s:15:"color_night.css";i:14;s:13:"color_sun.css";i:15;s:18:"color_twilight.css";i:16;s:15:"color_water.css";i:17;s:12:"avatarep.css";i:18;}]]></disporder>
 	</properties>
 	<stylesheets>
-		<stylesheet name="usercp.css" attachedto="usercp.php|private.php" version="1837"><![CDATA[.usercp_nav_item {
-	display: block;
-	padding: 1px 0 1px 23px;
-	background-image: url(images/usercp_sprite.png);
-	background-repeat: no-repeat;
+		<stylesheet name="color_leaf.css" attachedto="leaf" version="1837"><![CDATA[a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #5aaf33;
 }
 
-.usercp_nav_composepm {
-	background-position: 0 0;
+#logo {
+	background: #386e21 url(images/colors/leaf_header.png) top left repeat-x;
+	border-bottom: 1px solid #234615;
 }
 
-.usercp_nav_pmfolder {
-	background-position: 0 -20px;
-}
-
-.usercp_nav_sub_pmfolder {
-	padding-left: 40px;
-	background-position: 0 -40px;
-}
-
-.usercp_nav_trash_pmfolder {
-	padding-left: 40px;
-	background-position: 0 -60px;
-}
-
-.usercp_nav_pmtracking {
-	background-position: 0 -80px;
-}
-
-.usercp_nav_pmfolders {
-	background-position: 0 -100px;
-}
-
-.usercp_nav_profile {
-	background-position: 0 -120px;
-}
-
-.usercp_nav_email {
-	padding-left: 40px;
-	background-position: 0 -140px;
-}
-
-.usercp_nav_password {
-	padding-left: 40px;
-	background-position: 0 -160px;
-}
-
-.usercp_nav_username {
-	padding-left: 40px;
-	background-position: 0 -180px;
-}
-
-.usercp_nav_editsig {
-	padding-left: 40px;
-	background-position: 0 -200px;
-}
-
-.usercp_nav_avatar {
-	padding-left: 40px;
-	background-position: 0 -220px;
-}
-
-.usercp_nav_options {
-	background-position: 0 -240px;
-}
-
-.usercp_nav_usergroups {
-	background-position: 0 -260px;
-}
-
-.usercp_nav_editlists {
-	background-position: 0 -280px;
-}
-
-.usercp_nav_attachments {
-	background-position: 0 -300px;
-}
-
-.usercp_nav_drafts {
-	background-position: 0 -320px;
-}
-
-.usercp_nav_subscriptions {
-	background-position: 0 -340px;
-}
-
-.usercp_nav_fsubscriptions {
-	background-position: 0 -360px;
-}
-
-.usercp_nav_viewprofile {
-	background-position: 0 -380px;
-}
-
-.usercp_nav_home {
-	background-position: 0 -400px;
-}
-
-.usercp_notepad {
-	width: 99%;
-}
-
-.usercp_container {
-	margin: 5px;
-	padding: 8px;
-	border:1px solid #CCCCCC;
-}
-
-.pmspace {
-	float: right;
-	margin: -3px 5px;
-}
-
-.pmspace_container {
-	background: #fff;
-	border: 1px solid #ccc;
-	width: 100px;
-	display: inline-block;
-}
-
-.pmspace_used {
-	display: inline-block;
+#header ul.menu li a {
 	color: #fff;
-	margin: -1px;
 }
 
-.pmspace_used.low {
-	border: 1px solid #0c5a01;
-	background: #167203;
+#panel input.button {
+	background: #386e21 url(images/colors/leaf_thead.png) top left repeat-x;
 }
 
-.pmspace_used.medium {
-	background: #ff862b;
-	border: 1px solid #d7611e;
+.thead {
+	background: #386e21 url(images/colors/leaf_thead.png) top left repeat-x;
+	border-bottom: 1px solid #234615;
 }
 
-.pmspace_used.high {
-	background: #e73c3c;
-	border: 1px solid #c00;
+.thead input.textbox,
+.thead select {
+	border: 1px solid #234615;
 }
 
-.pmspace_unused {
-	display: inline-block;
+.popup_menu .popup_item:hover {
+	background: #5aaf33;
+	color: #fff;
 }
 
-.pmspace_text {
-	padding: 1px 5px;
-	display: inline-block;
+.tt-suggestion.tt-is-under-cursor {
+    background-color: #5aaf33;
+	color: #fff;
 }
 
-.new_pm {
-	font-weight: bold;
+.pagination a:hover {
+	background-color: #5aaf33;
+	color: #fff;
+	border-color: #234615;
 }
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		]]>
-		</stylesheet>
-		<stylesheet name="thread_status.css" attachedto="forumdisplay.php|usercp.php|search.php" version="1837"><![CDATA[.thread_status {
-    position: relative;
-    margin: 0px;
-    text-align: center;
-    display: inline-block;
-	vertical-align: middle;
-    width: 24px;
-	font-weight: 900;
-}
-
-.page_forumdisplay .thread_status {
-  	width: 24px;
-    right: 0;
-	top: 30%;
-    position: absolute;
-}
-
-.thread_status:before {
-}
-
-.thread_status:after {
-  position: relative;
-  font-family: 'Font Awesome 6 Free';
-  content:"\e5a0";
-  font-size: 15px;
-}
-
-.thread_status[class*="lock"]:after {
-  content: "\f023";
-}
-
-.thread_status[class*="dot"]:after {
-}
-
-.dot_hotfolder:after, .dot_newhotfolder:after, .hotfolder:after, .newhotfolder:after {
-  content: "\f06d";
-	font-weight: 900;
-}
-
-.dot_newfolder:after, .newfolder:after {
-  content: "\f07c";
-}
-
-.movefolder:after {
-   content: "\f3e5";
-}
-
-*[class*="hot"]:after {
-	color: #dc3545;
-}
-
-*[class*="new"]:after {
-	color: #444;
-}
-
-/** Update V1.2 **/
-.thread_legend .thread_status {
-	margin: 0 5px 0 0;
-}
-
-.dot_folder:after,
-.dot_hotfolder:after,
-.dot_hotclosefolder:after,
-.dot_closefolder:after,
-.folder:after,
-.hotfolder:after,
-.hotclosefolder:after,
-.closefolder:after,
-.movefolder:after {
-	color: #444 !important;
-	opacity: 0.4;
-}
-
-.hotclosefolder:after,
-.closefolder:after,
-.dot_hotclosefolder:after,
-.dot_closefolder:after {
-	content: "\f023";
-}
-
-
 		
 		
 		
@@ -269,7 +70,7 @@
 		
 		]]>
 		</stylesheet>
-		<stylesheet name="color_black.css" attachedto="black" version="1837"><![CDATA[a:link,
+		<stylesheet name="color_sun.css" attachedto="sun" version="1837"><![CDATA[a:link,
 a:visited,
 a:hover,
 a:active {
@@ -277,77 +78,458 @@ a:active {
 }
 
 #logo {
-	background: #202020 url(images/colors/black_header.png) top left repeat-x;
-	border-bottom: 1px solid #000;
+	background: #ffdd4d url(images/colors/sun_header.png) top left repeat-x;
+	border-bottom: 1px solid #111;
+}
+
+#header ul.menu li a {
+	color: #000;
+}
+
+#panel input.button {
+	background: #ffdd4d url(images/colors/sun_thead.png) top left repeat-x;
+	color: #000;
+}
+
+.thead {
+	background: #ffdd4d url(images/colors/sun_thead.png) top left repeat-x;
+	border-bottom: 1px solid #ffaf1a;
+	color: #000;
+}
+
+.thead a:link,
+.thead a:visited,
+.thead a:hover,
+.thead a:active {
+	color: #000;
+}
+
+.thead input.textbox,
+.thead select {
+	border: 1px solid #ffaf1a;
+}
+
+.popup_menu .popup_item:hover {
+	background: #ffea9c;
+	color: #000;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+    background-color: #ffea9c;
+	color: #fff;
+}
+
+.pagination a:hover {
+	background-color: #ffea9c;
+	color: #000;
+	border-color: #ffaf1a;
+}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		]]>
+		</stylesheet>
+		<stylesheet name="color_night.css" attachedto="night" version="1837"><![CDATA[a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #023a61;
+}
+
+#logo {
+	background: #022338 url(images/colors/night_header.png) top left repeat-x;
+	border-bottom: 1px solid #011929;
 }
 
 #header ul.menu li a {
 	color: #fff;
 }
 
-#panel .upper {
-	background: #dcdbdc url(images/colors/black_tcat.png) repeat-x;
-	color: #000;
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #bbb;
-}
-
-#panel .upper a:link,
-#panel .upper a:visited,
-#panel .upper a:hover,
-#panel .upper a:active {
-	color: #000;
-}
-
-#panel input.textbox {
-	border-color: #ccc;
-}
-
 #panel input.button {
-	background: #202121 url(images/colors/black_thead.png) top left repeat-x;
-	color: #fff;
-	border-color: #000;
+	background: #022338 url(images/colors/night_thead.png) top left repeat-x;
 }
 
 .thead {
-	background: #202121 url(images/colors/black_thead.png) top left repeat-x;
-	border-bottom: 1px solid #000;
-}
-
-.tcat {
-	background: #dcdbdc url(images/colors/black_tcat.png) repeat-x;
-	color: #000000;
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #bbb;
-}
-
-.tcat a:link,
-.tcat a:visited,
-.tcat a:hover,
-.tcat a:active {
-	color: #000000;
+	background: #022338 url(images/colors/night_thead.png) top left repeat-x;
+	border-bottom: 1px solid #011929;
 }
 
 .thead input.textbox,
 .thead select {
-	border: 1px solid #111;
+	border: 1px solid #011929;
 }
 
 .popup_menu .popup_item:hover {
-	background: #333;
+	background: #023a61;
 	color: #fff;
 }
 
 .tt-suggestion.tt-is-under-cursor {
-    background-color: #333;
+    background-color: #023a61;
 	color: #fff;
 }
 
 .pagination a:hover {
-	background-color: #333;
+	background-color: #023a61;
 	color: #fff;
-	border-color: #000;
+	border-color: #011929;
 }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		]]>
+		</stylesheet>
+		<stylesheet name="modcp.css" attachedto="modcp.php" version="1837"><![CDATA[.modcp_nav_item {
+	display: block;
+	padding: 1px 0 1px 23px;
+	background-image: url(images/modcp_sprite.png);
+	background-repeat: no-repeat;
+}
+
+.modcp_nav_home {
+	background-position: 0 0;
+}
+
+.modcp_nav_announcements {
+	background-position: 0 -20px;
+}
+
+.modcp_nav_reports {
+	background-position: 0 -40px;
+}
+
+.modcp_nav_modqueue {
+	background-position: 0 -60px;
+}
+
+.modcp_nav_modlogs {
+	background-position: 0 -80px;
+}
+
+.modcp_nav_editprofile {
+	background-position: 0 -100px;
+}
+
+.modcp_nav_banning {
+	background-position: 0 -120px;
+}
+
+.modcp_nav_warninglogs {
+	background-position: 0 -140px;
+}
+
+.modcp_nav_ipsearch {
+	background-position: 0 -160px;
+}
+
+.modqueue_message {
+	overflow: auto;
+	max-height: 250px;
+}
+
+.modqueue_controls {
+	width: 270px;
+	float: right;
+	text-align: center;
+	border: 1px solid #ccc;
+	background: #fff;
+	padding: 6px;
+	font-weight: bold;
+}
+
+.modqueue_controls label {
+	margin-right: 8px;
+}
+
+.label_radio_ignore,
+.label_radio_delete,
+.label_radio_approve {
+	font-weight: bold;
+}
+
+.modqueue_meta {
+	color: #444;
+	font-size: 95%;
+	margin-bottom: 8px;
+}
+
+.modqueue_mass {
+	list-style: none;
+	margin: 0;
+	width: 150px;
+	padding: 0;
+}
+
+.modqueue_mass li {
+	margin-bottom: 4px;
+	padding: 0;
+}
+
+.modqueue_mass li a {
+	display: block;
+	padding: 4px;
+	border: 1px solid transparent;
+}
+
+.modqueue_mass li a:hover {
+	background: #efefef;
+	border: 1px solid #ccc;
+	text-decoration: none;
+}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		]]>
+		</stylesheet>
+		<stylesheet name="color_calm.css" attachedto="calm" version="1837"><![CDATA[a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #48715b;
+}
+
+#logo {
+	background: #385947 url(images/colors/calm_header.png) top left repeat-x;
+	border-bottom: 1px solid #263c30;
+}
+
+#header ul.menu li a {
+	color: #fff;
+}
+
+#panel input.button {
+	background: #385947 url(images/colors/calm_thead.png) top left repeat-x;
+}
+
+.thead {
+	background: #385947 url(images/colors/calm_thead.png) top left repeat-x;
+	color: #ffffff;
+	border-bottom: 1px solid #263c30;
+}
+
+.thead input.textbox,
+.thead select {
+	border: 1px solid #263c30;
+}
+
+.popup_menu .popup_item:hover {
+	background: #48715b;
+	color: #fff;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+    background-color: #48715b;
+	color: #fff;
+}
+
+.pagination a:hover {
+	background-color: #48715b;
+	color: #fff;
+	border-color: #263c30;
+}
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		]]>
+		</stylesheet>
+		<stylesheet name="color_earth.css" attachedto="earth" version="1837"><![CDATA[a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #6d5545;
+}
+
+#logo {
+	background: #4a3a2e url(images/colors/earth_header.png) top left repeat-x;
+	border-bottom: 1px solid #31261e;
+}
+
+#header ul.menu li a {
+	color: #fff;
+}
+
+#panel input.button {
+	background: #4a3b2f url(images/colors/earth_thead.png) top left repeat-x;
+}
+
+.thead {
+	background: #4a3b2f url(images/colors/earth_thead.png) top left repeat-x;
+	border-bottom: 1px solid #31261e;
+}
+
+.thead input.textbox,
+.thead select {
+	border: 1px solid #31261e;
+}
+
+.popup_menu .popup_item:hover {
+	background: #6d5545;
+	color: #fff;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+    background-color: #6d5545;
+	color: #fff;
+}
+
+.pagination a:hover {
+	background-color: #6d5545;
+	color: #fff;
+	border-color: #31261e;
+}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		]]>
+		</stylesheet>
+		<stylesheet name="color_water.css" attachedto="water" version="1837"><![CDATA[a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #2d9595;
+}
+
+#logo {
+	background: #1e6365 url(images/colors/water_header.png) top left repeat-x;
+	border-bottom: 1px solid #133f41;
+}
+
+#header ul.menu li a {
+	color: #fff;
+}
+
+#panel input.button {
+	background: #1e6365 url(images/colors/water_thead.png) top left repeat-x;
+}
+
+.thead {
+	background: #1e6365 url(images/colors/water_thead.png) top left repeat-x;
+	border-bottom: 1px solid #133f41;
+}
+
+.thead input.textbox,
+.thead select {
+	border: 1px solid #133f41;
+}
+
+.popup_menu .popup_item:hover {
+	background: #2d9595;
+	color: #fff;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+    background-color: #2d9595;
+	color: #fff;
+}
+
+.pagination a:hover {
+	background-color: #2d9595;
+	color: #fff;
+	border-color: #133f41;
+}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		]]>
+		</stylesheet>
+		<stylesheet name="showthread.css" attachedto="showthread.php" version="1837"><![CDATA[ul.thread_tools,
+ul.thread_tools li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.thread_tools li {
+	padding-left: 24px;
+	padding-bottom: 4px;
+	margin-bottom: 3px;
+	font-size: 11px;
+	background-image: url(images/showthread_sprite.png);
+	background-repeat: no-repeat;
+}
+
+ul.thread_tools li.printable {
+	background-position: 0 0;
+}
+
+ul.thread_tools li.sendthread {
+	background-position: 0 -20px;
+}
+
+ul.thread_tools li.subscription_add {
+	background-position: 0 -40px;
+}
+
+ul.thread_tools li.subscription_remove {
+	background-position: 0 -60px;
+}
+
+ul.thread_tools li.poll {
+	background-position: 0 -80px;
+}
+
+.showthread_spinner {
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	padding: 20px;
+}
+
+
 		
 		
 		
@@ -475,120 +657,6 @@ li[style*="100"]~ li:nth-child(n+2) a  {
 		
 		
 		
-		]]>
-		</stylesheet>
-		<stylesheet name="color_water.css" attachedto="water" version="1837"><![CDATA[a:link,
-a:visited,
-a:hover,
-a:active {
-	color: #2d9595;
-}
-
-#logo {
-	background: #1e6365 url(images/colors/water_header.png) top left repeat-x;
-	border-bottom: 1px solid #133f41;
-}
-
-#header ul.menu li a {
-	color: #fff;
-}
-
-#panel input.button {
-	background: #1e6365 url(images/colors/water_thead.png) top left repeat-x;
-}
-
-.thead {
-	background: #1e6365 url(images/colors/water_thead.png) top left repeat-x;
-	border-bottom: 1px solid #133f41;
-}
-
-.thead input.textbox,
-.thead select {
-	border: 1px solid #133f41;
-}
-
-.popup_menu .popup_item:hover {
-	background: #2d9595;
-	color: #fff;
-}
-
-.tt-suggestion.tt-is-under-cursor {
-    background-color: #2d9595;
-	color: #fff;
-}
-
-.pagination a:hover {
-	background-color: #2d9595;
-	color: #fff;
-	border-color: #133f41;
-}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		]]>
-		</stylesheet>
-		<stylesheet name="showthread.css" attachedto="showthread.php" version="1837"><![CDATA[ul.thread_tools,
-ul.thread_tools li {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-ul.thread_tools li {
-	padding-left: 24px;
-	padding-bottom: 4px;
-	margin-bottom: 3px;
-	font-size: 11px;
-	background-image: url(images/showthread_sprite.png);
-	background-repeat: no-repeat;
-}
-
-ul.thread_tools li.printable {
-	background-position: 0 0;
-}
-
-ul.thread_tools li.sendthread {
-	background-position: 0 -20px;
-}
-
-ul.thread_tools li.subscription_add {
-	background-position: 0 -40px;
-}
-
-ul.thread_tools li.subscription_remove {
-	background-position: 0 -60px;
-}
-
-ul.thread_tools li.poll {
-	background-position: 0 -80px;
-}
-
-.showthread_spinner {
-	width: 100%;
-	margin: 0 auto;
-	display: block;
-	text-align: center;
-	padding: 20px;
-}
-
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		]]>
 		</stylesheet>
@@ -637,6 +705,7 @@ a:active {
 	color: #fff;
 	border-color: #550000;
 }
+		
 		
 		
 		
@@ -706,6 +775,7 @@ a:active {
 		
 		
 		
+		
 		]]>
 		</stylesheet>
 		<stylesheet name="color_twilight.css" attachedto="twilight" version="1837"><![CDATA[a:link,
@@ -753,6 +823,7 @@ a:active {
 	color: #fff;
 	border-color: #1d2b34;
 }
+		
 		
 		
 		
@@ -957,6 +1028,7 @@ height: 50px;width: 50px;border-radius: 6px
 		
 		
 		
+		
 		]]>
 		</stylesheet>
 		<stylesheet name="css3.css" version="1837"><![CDATA[tr td.trow1:first-child,
@@ -1100,6 +1172,7 @@ div.error {
     	-webkit-border-radius: 6px;
    	 border-radius: 6px;
 }	
+		
 		
 		
 		]]>
@@ -1831,13 +1904,13 @@ label {
 }
 
 .form-select {
-	background-image: url('sort-solid.svg');
+	background-image: url('images/sort-solid.svg');
 	border-radius: 3px;
 	border-color: #ccc!important;
 }
 
 .form-select-sm {
-	background-image: url('sort-solid.svg');
+	background-image: url('images/sort-solid.svg');
 	color: #222;
 	font-size: 16px;
 	overflow: hidden;
@@ -2341,337 +2414,90 @@ border-radius: 3px;
 .unapproved_post {
 	background: #E8DEFF;
 }
-]]>
-		</stylesheet>
-		<stylesheet name="color_earth.css" attachedto="earth" version="1837"><![CDATA[a:link,
-a:visited,
-a:hover,
-a:active {
-	color: #6d5545;
-}
 
-#logo {
-	background: #4a3a2e url(images/colors/earth_header.png) top left repeat-x;
-	border-bottom: 1px solid #31261e;
-}
-
-#header ul.menu li a {
-	color: #fff;
-}
-
-#panel input.button {
-	background: #4a3b2f url(images/colors/earth_thead.png) top left repeat-x;
-}
-
-.thead {
-	background: #4a3b2f url(images/colors/earth_thead.png) top left repeat-x;
-	border-bottom: 1px solid #31261e;
-}
-
-.thead input.textbox,
-.thead select {
-	border: 1px solid #31261e;
-}
-
-.popup_menu .popup_item:hover {
-	background: #6d5545;
-	color: #fff;
-}
-
-.tt-suggestion.tt-is-under-cursor {
-    background-color: #6d5545;
-	color: #fff;
-}
-
-.pagination a:hover {
-	background-color: #6d5545;
-	color: #fff;
-	border-color: #31261e;
-}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		]]>
 		</stylesheet>
-		<stylesheet name="color_calm.css" attachedto="calm" version="1837"><![CDATA[a:link,
-a:visited,
-a:hover,
-a:active {
-	color: #48715b;
+		<stylesheet name="thread_status.css" attachedto="forumdisplay.php|usercp.php|search.php" version="1837"><![CDATA[.thread_status {
+    position: relative;
+    margin: 0px;
+    text-align: center;
+    display: inline-block;
+	vertical-align: middle;
+    width: 24px;
+	font-weight: 900;
 }
 
-#logo {
-	background: #385947 url(images/colors/calm_header.png) top left repeat-x;
-	border-bottom: 1px solid #263c30;
+.page_forumdisplay .thread_status {
+  	width: 24px;
+    right: 0;
+	top: 30%;
+    position: absolute;
 }
 
-#header ul.menu li a {
-	color: #fff;
+.thread_status:before {
 }
 
-#panel input.button {
-	background: #385947 url(images/colors/calm_thead.png) top left repeat-x;
+.thread_status:after {
+  position: relative;
+  font-family: 'Font Awesome 6 Free';
+  content:"\e5a0";
+  font-size: 15px;
 }
 
-.thead {
-	background: #385947 url(images/colors/calm_thead.png) top left repeat-x;
-	color: #ffffff;
-	border-bottom: 1px solid #263c30;
+.thread_status[class*="lock"]:after {
+  content: "\f023";
 }
 
-.thead input.textbox,
-.thead select {
-	border: 1px solid #263c30;
+.thread_status[class*="dot"]:after {
 }
 
-.popup_menu .popup_item:hover {
-	background: #48715b;
-	color: #fff;
+.dot_hotfolder:after, .dot_newhotfolder:after, .hotfolder:after, .newhotfolder:after {
+  content: "\f06d";
+	font-weight: 900;
 }
 
-.tt-suggestion.tt-is-under-cursor {
-    background-color: #48715b;
-	color: #fff;
+.dot_newfolder:after, .newfolder:after {
+  content: "\f07c";
 }
 
-.pagination a:hover {
-	background-color: #48715b;
-	color: #fff;
-	border-color: #263c30;
-}
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		]]>
-		</stylesheet>
-		<stylesheet name="color_night.css" attachedto="night" version="1837"><![CDATA[a:link,
-a:visited,
-a:hover,
-a:active {
-	color: #023a61;
+.movefolder:after {
+   content: "\f3e5";
 }
 
-#logo {
-	background: #022338 url(images/colors/night_header.png) top left repeat-x;
-	border-bottom: 1px solid #011929;
+*[class*="hot"]:after {
+	color: #dc3545;
 }
 
-#header ul.menu li a {
-	color: #fff;
-}
-
-#panel input.button {
-	background: #022338 url(images/colors/night_thead.png) top left repeat-x;
-}
-
-.thead {
-	background: #022338 url(images/colors/night_thead.png) top left repeat-x;
-	border-bottom: 1px solid #011929;
-}
-
-.thead input.textbox,
-.thead select {
-	border: 1px solid #011929;
-}
-
-.popup_menu .popup_item:hover {
-	background: #023a61;
-	color: #fff;
-}
-
-.tt-suggestion.tt-is-under-cursor {
-    background-color: #023a61;
-	color: #fff;
-}
-
-.pagination a:hover {
-	background-color: #023a61;
-	color: #fff;
-	border-color: #011929;
-}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		]]>
-		</stylesheet>
-		<stylesheet name="modcp.css" attachedto="modcp.php" version="1837"><![CDATA[.modcp_nav_item {
-	display: block;
-	padding: 1px 0 1px 23px;
-	background-image: url(images/modcp_sprite.png);
-	background-repeat: no-repeat;
-}
-
-.modcp_nav_home {
-	background-position: 0 0;
-}
-
-.modcp_nav_announcements {
-	background-position: 0 -20px;
-}
-
-.modcp_nav_reports {
-	background-position: 0 -40px;
-}
-
-.modcp_nav_modqueue {
-	background-position: 0 -60px;
-}
-
-.modcp_nav_modlogs {
-	background-position: 0 -80px;
-}
-
-.modcp_nav_editprofile {
-	background-position: 0 -100px;
-}
-
-.modcp_nav_banning {
-	background-position: 0 -120px;
-}
-
-.modcp_nav_warninglogs {
-	background-position: 0 -140px;
-}
-
-.modcp_nav_ipsearch {
-	background-position: 0 -160px;
-}
-
-.modqueue_message {
-	overflow: auto;
-	max-height: 250px;
-}
-
-.modqueue_controls {
-	width: 270px;
-	float: right;
-	text-align: center;
-	border: 1px solid #ccc;
-	background: #fff;
-	padding: 6px;
-	font-weight: bold;
-}
-
-.modqueue_controls label {
-	margin-right: 8px;
-}
-
-.label_radio_ignore,
-.label_radio_delete,
-.label_radio_approve {
-	font-weight: bold;
-}
-
-.modqueue_meta {
+*[class*="new"]:after {
 	color: #444;
-	font-size: 95%;
-	margin-bottom: 8px;
 }
 
-.modqueue_mass {
-	list-style: none;
-	margin: 0;
-	width: 150px;
-	padding: 0;
+/** Update V1.2 **/
+.thread_legend .thread_status {
+	margin: 0 5px 0 0;
 }
 
-.modqueue_mass li {
-	margin-bottom: 4px;
-	padding: 0;
+.dot_folder:after,
+.dot_hotfolder:after,
+.dot_hotclosefolder:after,
+.dot_closefolder:after,
+.folder:after,
+.hotfolder:after,
+.hotclosefolder:after,
+.closefolder:after,
+.movefolder:after {
+	color: #444 !important;
+	opacity: 0.4;
 }
 
-.modqueue_mass li a {
-	display: block;
-	padding: 4px;
-	border: 1px solid transparent;
+.hotclosefolder:after,
+.closefolder:after,
+.dot_hotclosefolder:after,
+.dot_closefolder:after {
+	content: "\f023";
 }
 
-.modqueue_mass li a:hover {
-	background: #efefef;
-	border: 1px solid #ccc;
-	text-decoration: none;
-}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		]]>
-		</stylesheet>
-		<stylesheet name="color_leaf.css" attachedto="leaf" version="1837"><![CDATA[a:link,
-a:visited,
-a:hover,
-a:active {
-	color: #5aaf33;
-}
 
-#logo {
-	background: #386e21 url(images/colors/leaf_header.png) top left repeat-x;
-	border-bottom: 1px solid #234615;
-}
-
-#header ul.menu li a {
-	color: #fff;
-}
-
-#panel input.button {
-	background: #386e21 url(images/colors/leaf_thead.png) top left repeat-x;
-}
-
-.thead {
-	background: #386e21 url(images/colors/leaf_thead.png) top left repeat-x;
-	border-bottom: 1px solid #234615;
-}
-
-.thead input.textbox,
-.thead select {
-	border: 1px solid #234615;
-}
-
-.popup_menu .popup_item:hover {
-	background: #5aaf33;
-	color: #fff;
-}
-
-.tt-suggestion.tt-is-under-cursor {
-    background-color: #5aaf33;
-	color: #fff;
-}
-
-.pagination a:hover {
-	background-color: #5aaf33;
-	color: #fff;
-	border-color: #234615;
-}
 		
 		
 		
@@ -2685,7 +2511,7 @@ a:active {
 		
 		]]>
 		</stylesheet>
-		<stylesheet name="color_sun.css" attachedto="sun" version="1837"><![CDATA[a:link,
+		<stylesheet name="color_black.css" attachedto="black" version="1837"><![CDATA[a:link,
 a:visited,
 a:hover,
 a:active {
@@ -2693,51 +2519,243 @@ a:active {
 }
 
 #logo {
-	background: #ffdd4d url(images/colors/sun_header.png) top left repeat-x;
-	border-bottom: 1px solid #111;
+	background: #202020 url(images/colors/black_header.png) top left repeat-x;
+	border-bottom: 1px solid #000;
 }
 
 #header ul.menu li a {
+	color: #fff;
+}
+
+#panel .upper {
+	background: #dcdbdc url(images/colors/black_tcat.png) repeat-x;
 	color: #000;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #bbb;
+}
+
+#panel .upper a:link,
+#panel .upper a:visited,
+#panel .upper a:hover,
+#panel .upper a:active {
+	color: #000;
+}
+
+#panel input.textbox {
+	border-color: #ccc;
 }
 
 #panel input.button {
-	background: #ffdd4d url(images/colors/sun_thead.png) top left repeat-x;
-	color: #000;
+	background: #202121 url(images/colors/black_thead.png) top left repeat-x;
+	color: #fff;
+	border-color: #000;
 }
 
 .thead {
-	background: #ffdd4d url(images/colors/sun_thead.png) top left repeat-x;
-	border-bottom: 1px solid #ffaf1a;
-	color: #000;
+	background: #202121 url(images/colors/black_thead.png) top left repeat-x;
+	border-bottom: 1px solid #000;
 }
 
-.thead a:link,
-.thead a:visited,
-.thead a:hover,
-.thead a:active {
-	color: #000;
+.tcat {
+	background: #dcdbdc url(images/colors/black_tcat.png) repeat-x;
+	color: #000000;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #bbb;
+}
+
+.tcat a:link,
+.tcat a:visited,
+.tcat a:hover,
+.tcat a:active {
+	color: #000000;
 }
 
 .thead input.textbox,
 .thead select {
-	border: 1px solid #ffaf1a;
+	border: 1px solid #111;
 }
 
 .popup_menu .popup_item:hover {
-	background: #ffea9c;
-	color: #000;
+	background: #333;
+	color: #fff;
 }
 
 .tt-suggestion.tt-is-under-cursor {
-    background-color: #ffea9c;
+    background-color: #333;
 	color: #fff;
 }
 
 .pagination a:hover {
-	background-color: #ffea9c;
-	color: #000;
-	border-color: #ffaf1a;
+	background-color: #333;
+	color: #fff;
+	border-color: #000;
+}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		]]>
+		</stylesheet>
+		<stylesheet name="usercp.css" attachedto="usercp.php|private.php" version="1837"><![CDATA[.usercp_nav_item {
+	display: block;
+	padding: 1px 0 1px 23px;
+	background-image: url(images/usercp_sprite.png);
+	background-repeat: no-repeat;
+}
+
+.usercp_nav_composepm {
+	background-position: 0 0;
+}
+
+.usercp_nav_pmfolder {
+	background-position: 0 -20px;
+}
+
+.usercp_nav_sub_pmfolder {
+	padding-left: 40px;
+	background-position: 0 -40px;
+}
+
+.usercp_nav_trash_pmfolder {
+	padding-left: 40px;
+	background-position: 0 -60px;
+}
+
+.usercp_nav_pmtracking {
+	background-position: 0 -80px;
+}
+
+.usercp_nav_pmfolders {
+	background-position: 0 -100px;
+}
+
+.usercp_nav_profile {
+	background-position: 0 -120px;
+}
+
+.usercp_nav_email {
+	padding-left: 40px;
+	background-position: 0 -140px;
+}
+
+.usercp_nav_password {
+	padding-left: 40px;
+	background-position: 0 -160px;
+}
+
+.usercp_nav_username {
+	padding-left: 40px;
+	background-position: 0 -180px;
+}
+
+.usercp_nav_editsig {
+	padding-left: 40px;
+	background-position: 0 -200px;
+}
+
+.usercp_nav_avatar {
+	padding-left: 40px;
+	background-position: 0 -220px;
+}
+
+.usercp_nav_options {
+	background-position: 0 -240px;
+}
+
+.usercp_nav_usergroups {
+	background-position: 0 -260px;
+}
+
+.usercp_nav_editlists {
+	background-position: 0 -280px;
+}
+
+.usercp_nav_attachments {
+	background-position: 0 -300px;
+}
+
+.usercp_nav_drafts {
+	background-position: 0 -320px;
+}
+
+.usercp_nav_subscriptions {
+	background-position: 0 -340px;
+}
+
+.usercp_nav_fsubscriptions {
+	background-position: 0 -360px;
+}
+
+.usercp_nav_viewprofile {
+	background-position: 0 -380px;
+}
+
+.usercp_nav_home {
+	background-position: 0 -400px;
+}
+
+.usercp_notepad {
+	width: 99%;
+}
+
+.usercp_container {
+	margin: 5px;
+	padding: 8px;
+	border:1px solid #CCCCCC;
+}
+
+.pmspace {
+	float: right;
+	margin: -3px 5px;
+}
+
+.pmspace_container {
+	background: #fff;
+	border: 1px solid #ccc;
+	width: 100px;
+	display: inline-block;
+}
+
+.pmspace_used {
+	display: inline-block;
+	color: #fff;
+	margin: -1px;
+}
+
+.pmspace_used.low {
+	border: 1px solid #0c5a01;
+	background: #167203;
+}
+
+.pmspace_used.medium {
+	background: #ff862b;
+	border: 1px solid #d7611e;
+}
+
+.pmspace_used.high {
+	background: #e73c3c;
+	border: 1px solid #c00;
+}
+
+.pmspace_unused {
+	display: inline-block;
+}
+
+.pmspace_text {
+	padding: 1px 5px;
+	display: inline-block;
+}
+
+.new_pm {
+	font-weight: bold;
 }
 		
 		
