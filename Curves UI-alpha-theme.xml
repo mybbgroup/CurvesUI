@@ -11078,9 +11078,9 @@ Post.dropZone.parents().eq(1).hide();
 	<input type="checkbox" class="form-check-input" name="remember" value="yes" /> {$lang->remember_me}?
 </div>
 	
-
+	</div>
 <div class="card-footer text-center">
-	<input type="submit" class="btn btn-primary" name="loginsubmit" value="{$lang->login}" />
+	<button type="submit" class="btn btn-primary" name="loginsubmit" value="{$lang->login}"><i class="fa-solid fa-right-to-bracket"></i> &nbsp;{$lang->login}</button>
 	<input name="my_post_key" type="hidden" value="{$mybb->post_code}" /></form>]]></template>
 		<template name="portal_welcome_membertext" version="1837"><![CDATA[<div class="py-2 border-bottom border-top">
                        {$lang->member_welcome_lastvisit} {$lastvisit}
