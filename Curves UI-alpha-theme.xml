@@ -1652,15 +1652,15 @@ font-size: 0.7rem;
 }
 
 .icon {
-    background: #eee;
-    width: 50px;
-    height: 50px;
-    border-radius: 6px;
-    text-align: center;
-    line-height: 50px;
-    vertical-align: middle;
-    padding: 0px;
+	background: #eee;
+	width: 50px;
 	color: #666;
+	height: 50px;
+	border-radius: 6px;
+	text-align: center;
+	line-height: 50px;
+	vertical-align: middle;
+	padding: 0px;
 }
 
 .navigation a {
@@ -2415,7 +2415,42 @@ border-radius: 3px;
 	background: #E8DEFF;
 }
 
-		]]>
+.noicon {
+	background: #f7f7f7;
+	padding: 5px;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-bottom: 1px;
+}
+		
+.noicon:active, .noicon:focus, .noicon:visited {
+	background: #dedede;
+	padding: 5px;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-bottom: 1px;
+}
+		
+
+.posticon-toolbar input[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.posticon-toolbar input[type=radio] + img {
+  cursor: pointer;
+	background: #f7f7f7;
+	padding: 7px;
+	border-radius: 4px;
+}
+
+
+.posticon-toolbar input[type=radio]:checked + img {
+	background: #dedede;
+}]]>
 		</stylesheet>
 		<stylesheet name="thread_status.css" attachedto="forumdisplay.php|usercp.php|search.php" version="1837"><![CDATA[.thread_status {
     position: relative;
@@ -4197,45 +4232,7 @@ $(function() {
 <title>{$mybb->settings['bbname']} - {$lang->edit_post}</title>
 {$headerinclude}
 {$post_javascript}
-		<style type="text/css">
 		
-.noicon {
-	background: #f7f7f7;
-	padding: 5px;
-	border-radius: 4px;
-	cursor: pointer;
-	margin-bottom: 1px;
-}
-		
-.noicon:active, .noicon:focus, .noicon:visited {
-	background: #dedede;
-	padding: 5px;
-	border-radius: 4px;
-	cursor: pointer;
-	margin-bottom: 1px;
-}
-		
-
-[type=radio] { 
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-
-[type=radio] + img {
-  cursor: pointer;
-	background: #f7f7f7;
-	padding: 7px;
-	border-radius: 4px;
-}
-
-
-[type=radio]:checked + img {
-	background: #dedede;
-}
-	</style>	
 </head>
 <body>
 {$header}
@@ -4338,6 +4335,7 @@ $(function() {
 {$disablesmilies}
 </div>
 </div>
+{$subscriptionmethod}		
 </div>
 <!-- postop -->		
 			
@@ -4836,7 +4834,7 @@ Post.dropZone.parents().eq(1).hide();
 <input type="submit" class="btn btn-primary btn-sm" name="go" value="{$lang->inline_go} ({$inlinecount})" id="inline_go" />
 	</div>
 	<div class="col-auto align-self-center">
-<input type="button" onclick="inlineModeration.clearChecked();" value="{$lang->clear}" class="btn btn-primary btn-sm" />
+<button type="button" onclick="inlineModeration.clearChecked();" value="{$lang->clear}" class="btn btn-secondary btn-sm"><i class="fa-solid fa-xmark"></i> &nbsp;{$lang->clear}</button>
 		
 	</div>
 			</div>
@@ -5272,8 +5270,8 @@ $(".forumjump").on('change', function() {
 		<template name="header_menu_portal" version="1837"><![CDATA[<li class="list-inline-item"><a href="{$mybb->settings['bburl']}/portal.php" class="top ps-0 ps-sm-0 ps-md-0 ps-lg-5 ps-xl-5 ps-xxl-5 pt-2 pt-sm-2 pt-md-2 pt-lg-0 pt-xl-0 pt-xxl-0"><i class="fa-regular fa-newspaper text-muted"></i> &nbsp;{$lang->toplinks_portal}</a></li>]]></template>
 		<template name="header_menu_search" version="1830"><![CDATA[<li class="list-inline-item"><a href="{$mybb->settings['bburl']}/search.php" class="search">{$lang->toplinks_search}</a></li>]]></template>
 		<template name="header_welcomeblock_guest" version="1837"><![CDATA[<ul class="list-inline" style="margin-bottom: 0px">
-<li class="list-inline-item"><a href="{$mybb->settings['bburl']}/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true, zIndex: (typeof modal_zindex !== 'undefined' ? modal_zindex : 9999) }); return false;" class="login"><i class="fa-solid fa-right-to-bracket"></i> &nbsp;{$lang->welcome_login}</a></li>
-<li class="list-inline-item"><a href="{$mybb->settings['bburl']}/member.php?action=register"><i class="fa-solid fa-user"></i> &nbsp;{$lang->welcome_register}</a>
+<li class="list-inline-item"><a href="{$mybb->settings['bburl']}/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true, zIndex: (typeof modal_zindex !== 'undefined' ? modal_zindex : 9999) }); return false;" class="login"><i class="fa-solid fa-right-to-bracket fs-6"></i> &nbsp;{$lang->welcome_login}</a></li>
+<li class="list-inline-item"><a href="{$mybb->settings['bburl']}/member.php?action=register"><i class="fa-solid fa-user fs-6"></i> &nbsp;{$lang->welcome_register}</a>
 </li>
 </ul>
 
@@ -10120,45 +10118,7 @@ if(use_xmlhttprequest == "1")
 <title>{$lang->post_reply_to}</title>
 {$headerinclude}
 {$post_javascript}
-		<style type="text/css">
 		
-.noicon {
-	background: #f7f7f7;
-	padding: 5px;
-	border-radius: 4px;
-	cursor: pointer;
-	margin-bottom: 1px;
-}
-		
-.noicon:active, .noicon:focus, .noicon:visited {
-	background: #dedede;
-	padding: 5px;
-	border-radius: 4px;
-	cursor: pointer;
-	margin-bottom: 1px;
-}
-		
-
-[type=radio] { 
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-
-[type=radio] + img {
-  cursor: pointer;
-	background: #f7f7f7;
-	padding: 7px;
-	border-radius: 4px;
-}
-
-
-[type=radio]:checked + img {
-	background: #dedede;
-}
-	</style>
 </head>
 <body>
 {$header}
@@ -10238,6 +10198,7 @@ if(use_xmlhttprequest == "1")
 {$disablesmilies}
 </div>
 </div>
+{$subscriptionmethod}		
 </div>
 <!-- postop -->			
 
@@ -10295,45 +10256,7 @@ Post.dropZone.parents().eq(1).hide();
 <title>{$lang->newthread_in}</title>
 {$headerinclude}
 {$post_javascript}
-	<style type="text/css">
-		
-.noicon {
-	background: #f7f7f7;
-	padding: 5px;
-	border-radius: 4px;
-	cursor: pointer;
-	margin-bottom: 1px;
-}
-		
-.noicon:active, .noicon:focus, .noicon:visited {
-	background: #dedede;
-	padding: 5px;
-	border-radius: 4px;
-	cursor: pointer;
-	margin-bottom: 1px;
-}
-		
 
-[type=radio] { 
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-
-[type=radio] + img {
-  cursor: pointer;
-	background: #f7f7f7;
-	padding: 7px;
-	border-radius: 4px;
-}
-
-
-[type=radio]:checked + img {
-	background: #dedede;
-}
-	</style>
 </head>
 <body>
 {$header}
@@ -10440,6 +10363,7 @@ Post.dropZone.parents().eq(1).hide();
 {$disablesmilies}
 </div>
 </div>
+{$subscriptionmethod}		
 </div>
 <!-- postop -->		
 	
@@ -11366,7 +11290,9 @@ Post.dropZone.parents().eq(1).hide();
 		<template name="postbit_warn" version="1837"><![CDATA[<a href="warnings.php?action=warn&amp;uid={$post['uid']}&amp;pid={$post['pid']}" title="{$lang->postbit_warn}" class="postbit_warn dropdown-item"><i class="fa-solid fa-triangle-exclamation"></i> &nbsp;{$lang->postbit_button_warn}</a>]]></template>
 		<template name="postbit_www" version="1830"><![CDATA[<a href="{$post['website']}" target="_blank" rel="noopener" title="{$lang->postbit_website}" class="dropdown-item"><span>{$lang->postbit_button_website}</span></a>]]></template>
 		<template name="posticons" version="1837"><![CDATA[<div class="pb-3 pt-2 border-bottom mb-4">
+	<div class="posticon-toolbar">
 <label class="posticons_label"><input type="radio" class="form-check-input noicon" name="icon" value="-1"{$no_icons_checked} /> <img src="{$mybb->settings['bburl']}/images/icons/noicon.png" style="margin-bottom: 3px; height: 30px; width: 30px" alt="No Icon" title="No Icon" /></label> {$iconlist}
+	</div>
 </div>]]></template>
 		<template name="posticons_icon" version="1837"><![CDATA[<label class="posticons_label"><input type="radio" class="form-check-input" name="icon" value="{$dbicon['iid']}"{$checked} /> <img src="{$dbicon['path']}" style="margin-bottom: 3px;" alt="{$dbicon['name']}" title="{$dbicon['name']}" /></label>]]></template>
 		<template name="post_attachments" version="1837"><![CDATA[<div class="card border-0">
@@ -11465,16 +11391,18 @@ Post.dropZone.parents().eq(1).hide();
 </select>
 		</div>]]></template>
 		<template name="post_savedraftbutton" version="1837"><![CDATA[<button type="submit" class="btn-thread ms-2" name="savedraft" value="{$lang->save_draft}"><i class="fa-regular fa-note-sticky"></i> &nbsp;{$lang->save_draft}</button>]]></template>
-		<template name="post_subscription_method" version="1837"><![CDATA[<div class="legend mt-4 mb-4">{$lang->thread_subscription_method}</div>
-
-<div class="p-3 pb-0 pt-0">
-	<div class="text-muted mt-0 mb-4">
-			{$lang->thread_subscription_method_desc}
-		</div>
-<input type="radio" class="form-check-input" name="postoptions[subscriptionmethod]" {$subscribe}value="" /> {$lang->no_subscribe}</label><br />
-	<label><input type="radio" class="form-check-input mt-1"  name="postoptions[subscriptionmethod]" {$nonesubscribe}value="none" /> {$lang->no_subscribe_notification}</label><br />
-	<label><input type="radio" class="form-check-input mt-1"  name="postoptions[subscriptionmethod]" {$emailsubscribe}value="email"/> {$lang->instant_email_subscribe}</label><br />
-	<label><input type="radio" class="form-check-input mt-1"  name="postoptions[subscriptionmethod]" {$pmsubscribe}value="pm" /> {$lang->instant_pm_subscribe}</label>
+		<template name="post_subscription_method" version="1837"><![CDATA[<div class="bg-nav p-2 rounded text-16 d-block d-sm-block d-md-block d-lg-none mb-3">{$lang->thread_subscription_method}</div>
+<div class="row g-3 m-auto border-bottom pb-4 pt-0 mt-0 mb-2">
+<div class="col-lg-3 d-none d-sm-none d-md-none d-lg-block text-center text-sm-center text-md-center text-lg-end border-end text-16 fw-bold pe-3 me-3">
+{$lang->thread_subscription_method}
+</div>
+<div class="col">
+	<div class="text-desc mb-3">{$lang->thread_subscription_method_desc}</div>
+	<label class="form-check-label"><input type="radio" class="form-check-input" name="postoptions[subscriptionmethod]" {$subscribe}value="" /> {$lang->no_subscribe}</label><br />
+	<label class="form-check-label"><input type="radio" class="form-check-input mt-1"  name="postoptions[subscriptionmethod]" {$nonesubscribe}value="none" /> {$lang->no_subscribe_notification}</label><br />
+	<label class="form-check-label"><input type="radio" class="form-check-input mt-1"  name="postoptions[subscriptionmethod]" {$emailsubscribe}value="email"/> {$lang->instant_email_subscribe}</label><br />
+	<label class="form-check-label"><input type="radio" class="form-check-input mt-1"  name="postoptions[subscriptionmethod]" {$pmsubscribe}value="pm" /> {$lang->instant_pm_subscribe}</label>
+</div>
 </div>]]></template>
 		<template name="previewpost" version="1830"><![CDATA[{$postbit}]]></template>
 		<template name="printthread" version="1837"><![CDATA[<html>
@@ -12501,8 +12429,8 @@ if(use_xmlhttprequest == "1")
 {$headerinclude}
 </head>
 <body>
-<div class="container-lg">
-<div class="card border-0">
+<div class="container-md pt-5">
+<div class="card pt-5 border-0" style="max-width: 100%">
 <div class="card-body pt-5">
 	<div class="text-dark"><h3 class="mb-0 fw-bold">{$title}</h3></div>
 		<div class="alert bg-nav mt-2 mb-2" style="font-size: 16px">
