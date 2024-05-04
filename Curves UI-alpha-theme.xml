@@ -4384,8 +4384,8 @@ Post.dropZone.parents().eq(1).hide();
 <input type="hidden" name="pid" value="{$pid}" />
 			</div>
 		</div>
-		</form>
-		</div></div>]]></template>
+		</div></div>
+</form>]]></template>
 		<template name="editpost_disablesmilies" version="1837"><![CDATA[<input type="checkbox" class="form-check-input" name="postoptions[disablesmilies]" value="1" tabindex="8"{$postoptionschecked['disablesmilies']} /> {$lang->options_disablesmilies}]]></template>
 		<template name="editpost_postoptions" version="1837"><![CDATA[<a class="links" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-postop" role="button"><i class="fa-solid fa-gear"></i> &nbsp;{$lang->post_options}</a>]]></template>
 		<template name="editpost_reason" version="1837"><![CDATA[<input type="text" class="form-control border mb-3" name="editreason" size="40" placeholder="{$lang->editreason}" maxlength="150" value="{$reason}" tabindex="5" />]]></template>
