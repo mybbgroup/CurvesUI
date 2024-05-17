@@ -5015,9 +5015,7 @@ Post.dropZone.parents().eq(1).hide();
 		&nbsp;
 	</div>
 {$inlinemod}
-</div>
-
-{$inline_edit_js}]]></template>
+</div>]]></template>
 		<template name="forumdisplay_threadlist_prefixes" version="1837"><![CDATA[<div class="col-lg-auto align-self-center">
 <select name="prefix" class="form-select border form-select-sm pe-5">
 <option value="-2"{$default_selected['any']}>{$lang->prefix_any}</option>
@@ -6547,8 +6545,6 @@ if(use_xmlhttprequest == "1")
 {$header}
 	
 <div class="container-md">
-{$inline_errors}
-{$member_loggedin_notice}	
 <div class="card">
 <div class="card-body pt-0">	
 	
