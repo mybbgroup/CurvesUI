@@ -6008,7 +6008,7 @@ if(use_xmlhttprequest == "1")
 		</div>
 		<div class="col">
 			<h6 class="mb-0">{$user['profilelink']}</h6>
-			{$user['usertitle']} <br />{$user['groupimage']}<span class="small">
+			{$user['usertitle']} <br />{$usergroup['groupimage']}<span class="small">
 			<span class="text-muted">{$lang->posts}</span> {$user['postnum']} / <span class="text-muted">{$lang->threads}</span> {$user['threadnum']}<br />
 			<span class="text-muted">{$lang->joined}:</span> {$user['regdate']}<br />
 			<span class="text-muted">{$lang->lastvisit}:</span> {$user['lastvisit']}</span>
