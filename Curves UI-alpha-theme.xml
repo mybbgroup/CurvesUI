@@ -14895,23 +14895,12 @@ select.size = select.length;
 		<i class="bi bi-chat"></i>
 	
 	</div>
-
 		<div class="col-5 align-self-center">
-			
 			<a href="{$thread['threadlink']}" style="font-size: 18px; font-weight: 600">{$thread['subject']}</a> <br />
 			<span class="text-muted" style="font-size: 14px">
 				<span class="lastpostbit">{$thread['author']}</span> 
 			</span>
-			
 		</div>
-		<div class="col-auto align-items-center d-flex justify-content-center">
-			
-			{$thread['threadprefix']}
-			
-		</div>
-		
-			
-			
 		<div class="col-2 text-end align-self-center">
 			
 			<span class="text-muted" style="font-size: 14px">{$lang->replies}</span> <span style="font-size: 14px">{$thread['replies']}</span><br />
