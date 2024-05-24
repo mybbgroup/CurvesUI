@@ -12,8 +12,8 @@ if(defined("THIS_SCRIPT") && THIS_SCRIPT == 'index.php')
 
 function tpref_info()
 {
-	global $mybb, $config;
 	if($mybb->settings['tpref_enable'] == 1)
+	global $mybb;
 	{
 		$config = '<div style="float: right;"><span style="color:Green; padding: 21px; text-decoration: none;">Plugin Working</span></div>';
 	}
