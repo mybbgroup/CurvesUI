@@ -17,7 +17,7 @@ if(defined("THIS_SCRIPT"))
 	// Añadir hooks
 	if(THIS_SCRIPT == 'index.php' || THIS_SCRIPT == 'forumdisplay.php')
 	{
-		if($settings['sidebox5'] == 0 || $settings['sidebox5'] == 1)
+		if(isset($settings['sidebox5']) && ($settings['sidebox5'] == 0 || $settings['sidebox5'] == 1))
 		{
 			$plugins->add_hook('index_end', 'avatarep_portal_sb');	
 			$plugins->add_hook('forumdisplay_end', 'avatarep_portal_sb');		
@@ -29,7 +29,7 @@ if(defined("THIS_SCRIPT"))
 	}
 	else if(THIS_SCRIPT == 'showthread.php')
 	{
-		if($settings['sidebox5'] == 0 || $settings['sidebox5'] == 1)
+		if(empty($settings['sidebox5']) || $settings['sidebox5'] == 1)
 		$plugins->add_hook('showthread_end', 'avatarep_portal_sb');
 		$plugins->add_hook('showthread_end', 'avatarep_threads');
 		$plugins->add_hook('showthread_end', 'avatarep_similar_threads');
@@ -849,7 +849,7 @@ function forumlist_avatar_search()
 
 	if($mybb->settings['avatarep_format'] == 1  && $mybb->settings['avatarep_temas'] == 1)
 	{
-		if($post['uid']>0)
+		if(!empty($post['uid']))
 		{
 			$post['username'] = htmlspecialchars_uni($post['username']);
 			$cache->cache['users'][$post['uid']] = $post['username'];		
@@ -864,7 +864,7 @@ function forumlist_avatar_search()
 			$cache->cache['guests'][] = $post['username'];		
 			$post['username'] = "#{$post['username']}#";			
 		}
-		if($thread['uid']>0)
+		if(!empty($thread['uid']))
 		{
 			$thread['username'] = htmlspecialchars_uni($thread['username']);
 			$cache->cache['users'][$thread['uid']] = $thread['username'];		
@@ -879,7 +879,7 @@ function forumlist_avatar_search()
 			$cache->cache['guests'][] = $thread['username'];		
 			$thread['username'] = "#{$thread['username']}#";			
 		}
-		if($thread['lastposteruid']>0)
+		if(!empty($thread['lastposteruid']))
 		{	
 			$thread['lastposter'] = htmlspecialchars_uni($thread['lastposter']);
 			$cache->cache['users'][$thread['lastposteruid']] = $thread['lastposter'];		
@@ -1074,7 +1074,7 @@ function avatarep_threads()
 		if(!isset($avatarep) || !is_array($avatarep))
 		{
 			$uid = (int)$thread['uid'];
-			$query = $db->simple_select('users', 'uid, username, username AS userusername, avatar, avatartype', "uid = '{$uid}'");
+			$query = $db->simple_select('users', 'uid, username, username AS userusername, avatar, avatartype, usergroup, displaygroup', "uid = '{$uid}'");
 			$user = $db->fetch_array($query);						
 			$avatarep = avatarep_format_avatar($user);
 		}
@@ -1179,7 +1179,7 @@ function avatarep_format_ugroups()
 				foreach ($fmdata['users'] as $umid => $umdata)
 				{
 					$cache->cache['moderators'][$fmid]['users'][$umid]['username'] = "#{$umdata['username']}{$umid}#";				
-					$cache->cache['users'][$umid] = $udmata['username'];
+					$cache->cache['users'][$umid] = $umdata['username'];
 					$cache->cache['mods'][] = $umid;
 				}
 			}
@@ -1542,7 +1542,7 @@ function avatarep_popup()
         return false;
     }
 	$avatarep_script = "<script type=\"text/javascript\" src=\"{$mybb->asset_url}/jscripts/avatarep.js?ver=299\"></script>";
-    if($mybb->settings['avatarep_active'] == 1 && $mybb->settings['avatarep_menu_events'] != 0 && $mybb->input['action'] == "avatarep_popup")
+    if($mybb->settings['avatarep_active'] == 1 && $mybb->settings['avatarep_menu_events'] != 0 && $mybb->get_input('action') == "avatarep_popup")
 	{
 		$lang->load("member", false, true);
 		$lang->load("avatarep", false, true);

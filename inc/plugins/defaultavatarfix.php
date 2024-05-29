@@ -54,7 +54,7 @@ function defaultavatarfix()
 {
 	 global $mybb;
 	 
-	 if(!$mybb->user['avatar'] && !empty($mybb->settings['useravatar']))
+	 if(empty($mybb->user['avatar']) && !empty($mybb->settings['useravatar']))
 	 {
 		$mybb->user['avatar'] = $mybb->settings['useravatar'];
 	 }

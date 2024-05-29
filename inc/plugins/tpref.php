@@ -141,7 +141,7 @@ function forumlist_tprefix(&$_f)
 				$forum = iterator_to_array($forum);
 				$tprefix_cache[$forum['fid']] = $forum;
 				$depth = 0;
-				if($private_forums[$forum['fid']]['lastpost'])
+				if(!empty($private_forums[$forum['fid']]['lastpost']))
 				{
 					$forum['lastpost'] = $private_forums[$forum['fid']]['lastpost'];
 					$lastpost_data = array(
@@ -218,20 +218,22 @@ function forumlist_tprefix(&$_f)
 		$cache->cache['tprefix_cache'] = $tprefix_cache;	
 	}
 	
-	$_f['tprefix_lastpost'] = $cache->cache['tprefix_cache'][$_f['fid']]['tprefix_fid'];
-	if($mybb->settings['tpref_icon'] == 1)
-	{
-		$_f['tpicon'] = $_f['tprefix_lastpost']['tpicon'];
-		if(!empty($_f['tpicon'])){
-			$_f['tpicon'] = "<img src=\"{$_f['tpicon']}\" alt=\"Thread icon\" width=\"16\" height=\"16\" />&nbsp;";
-		}		
-	}
-	if($mybb->settings['tpref_prefix'] == 1)
-	{	
-		$_f['pref'] = $_f['tprefix_lastpost']['tpprefix'];
-		$_f['tpstyle'] = $_f['tprefix_lastpost']['tpstyle'];
-		if(!empty($_f['tpstyle'])){
-			$_f['tpprefix'] = $_f['tpstyle'] . "&nbsp;";			
+	if(isset($cache->cache['tprefix_cache'][$_f['fid']]['tprefix_fid'])) {
+		$_f['tprefix_lastpost'] = $cache->cache['tprefix_cache'][$_f['fid']]['tprefix_fid'];
+		if($mybb->settings['tpref_icon'] == 1)
+		{
+			$_f['tpicon'] = $_f['tprefix_lastpost']['tpicon'];
+			if(!empty($_f['tpicon'])){
+				$_f['tpicon'] = "<img src=\"{$_f['tpicon']}\" alt=\"Thread icon\" width=\"16\" height=\"16\" />&nbsp;";
+			}
+		}
+		if($mybb->settings['tpref_prefix'] == 1)
+		{
+			$_f['pref'] = $_f['tprefix_lastpost']['tpprefix'];
+			$_f['tpstyle'] = $_f['tprefix_lastpost']['tpstyle'];
+			if(!empty($_f['tpstyle'])){
+				$_f['tpprefix'] = $_f['tpstyle'] . "&nbsp;";
+			}
 		}
 	}
 }    
