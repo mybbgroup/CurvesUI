@@ -1367,7 +1367,7 @@ function avatarep_get_data_full(&$content, $avatarep_css, $avatarep_css_img)
 					if($mybb->settings['avatarep_guests'] == 1)
 					{
 						$find[] = "<avatarep_uid_[0]>";			
-					$replace[] = "<div class=\"avatarep_fd\"><img class=\"avatarep_bg{$avatarep_css_img}\" data-name=\"".$user['username']."\" alt=\"".$lang->guest."\" /></div>";
+						$replace[] = "<div class=\"avatarep_fd\"><img class=\"avatarep_bg{$avatarep_css_img}\" data-name=\"".$lang->guest."\" alt=\"".$lang->guest."\" /></div>";
 					}				
 				}
 			}
