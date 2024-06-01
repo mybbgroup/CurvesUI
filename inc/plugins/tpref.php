@@ -217,7 +217,8 @@ function forumlist_tprefix(&$_f)
 		// Aplicamos los cambios! Reemplazando las lineas de código para guardarlas en cache...
 		$cache->cache['tprefix_cache'] = $tprefix_cache;	
 	}
-	
+
+	$_f['tpprefix'] = $_f['tpicon'] = '';
 	if(isset($cache->cache['tprefix_cache'][$_f['fid']]['tprefix_fid'])) {
 		$_f['tprefix_lastpost'] = $cache->cache['tprefix_cache'][$_f['fid']]['tprefix_fid'];
 		if($mybb->settings['tpref_icon'] == 1)
