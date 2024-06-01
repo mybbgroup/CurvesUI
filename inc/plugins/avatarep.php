@@ -648,8 +648,6 @@ function avatarep_format_avatar($user, $css="")
 			'displaygroup' => $displaygroup
 		);
 	}
-	
-	return format_avatar($user);
 }
 
 // Avatar en foros
