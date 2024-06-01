@@ -576,66 +576,76 @@ function avatarep_admin()
 // Creamos el formato que llevara el avatar al ser llamado...
 function avatarep_format_avatar($user, $css="")
 {
-	global $mybb, $avatar, $theme;
-	
-	$size = 2048;
-	$dimensions = "30px";
-	$avatar = format_avatar($user['avatar'], $dimensions, $size);
-	$avatar = htmlspecialchars_uni($avatar['image']);
-	if(empty($user['avatar']))
-		$avatar = false;
+	global $mybb, $avatar, $theme, $lang;
+
 	if(THIS_SCRIPT == "showthread.php")
 	{
-		if($user['avatartype'] == "upload")
+		$avatar = false;
+		if(isset($user['avatartype']) && isset($user['avatar']))
 		{
-			$avatar = $mybb->settings['bburl'] . "/" . $user['avatar'];
+			if($user['avatartype'] == "upload")
+			{
+				$avatar = $mybb->settings['bburl'] . "/" . $user['avatar'];
+			}
+			else if($user['avatartype'] == "gallery")
+			{
+				//UPDATE `miforo_users` set avatar = REPLACE(avatar, './uploads/', 'uploads/');
+				$avatar = $mybb->settings['bburl'] . "/" . $user['avatar'];
+			}
+			else if($user['avatartype'] == "remote")
+			{
+				$avatar = $user['avatar'];
+			}
 		}
-		else if($user['avatartype'] == "gallery")
-		{
-			//UPDATE `miforo_users` set avatar = REPLACE(avatar, './uploads/', 'uploads/');
-			$avatar = $mybb->settings['bburl'] . "/" . $user['avatar'];
-		}
-		else if($user['avatartype'] == "remote")
-		{
-			$avatar = $user['avatar'];
-		}	  
-		else
+	}
+	else
+	{
+		if(empty($user['avatar']))
 		{
 			$avatar = false;
-		}	
+		}
+		else
+		{
+			$avatar = format_avatar($user['avatar']);
+			$avatar = htmlspecialchars_uni($avatar['image']);
+		}
 	}
-		
+
 	$default_avatar = str_replace('{theme}', $theme['imgdir'], $mybb->settings['useravatar']);
 
 	if($mybb->settings['avatarep_onerror'] == 1)
 		$onerror = " onerror=\"this.src=\'{$default_avatar}\'\"";
 	else
 		$onerror = "";
-		
+
+	$username     = isset($user['userusername']) ?      $user['userusername'] : $lang->guest;
+	$uid          = isset($user['uid'         ]) ? (int)$user['uid'         ] : 0;
+	$usergroup    = isset($user['usergroup'   ]) ? (int)$user['usergroup'   ] : 0;
+	$displaygroup = isset($user['displaygroup']) ? (int)$user['displaygroup'] : 0;
 	if($avatar == false)
 	{
 		return array(
-			'avatar' => $defaul_avatar,
-			'avatarep' => '<img class="avatarep_bg'.$css.'" alt="'.htmlspecialchars_uni($user['userusername']).'" data-name="'.htmlspecialchars_uni($user['userusername']).'" />',
-			'avatarep_contributor' => '<img class="avatarep_bg avatarep_img_contributor" alt="'.htmlspecialchars_uni($user['userusername']).'" data-name="'.htmlspecialchars_uni($user['userusername']).'" />',			
-			'username' => htmlspecialchars_uni($user['userusername']),
-			'profilelink' => get_profile_link($user['uid']),
-			'uid' => (int)$user['uid'],
-			'usergroup' => (int)$user['usergroup'],
-			'displaygroup' => (int)$user['displaygroup']
-		);			
+			'avatar' => $default_avatar,
+			'avatarep' => '<img class="avatarep_bg'.$css.'" alt="'.htmlspecialchars_uni($username).'" data-name="'.htmlspecialchars_uni($username).'" />',
+			'avatarep_contributor' => '<img class="avatarep_bg avatarep_img_contributor" alt="'.htmlspecialchars_uni($username).'" data-name="'.htmlspecialchars_uni($username).'" />',			
+			'username' => htmlspecialchars_uni($username),
+			'profilelink' => get_profile_link($uid),
+			'uid' => $uid,
+			'usergroup' => $usergroup,
+			'displaygroup' => $displaygroup
+		);
 	}
 	else
 	{
 		return array(
 			'avatar' => $avatar,
-			'avatarep' => '<img src="' . $avatar . '" class="avatarep_img'.$css.'" alt="'.htmlspecialchars_uni($user['userusername']).'"'.$onerror.' />',
-			'avatarep_contributor' => '<img src="' . $avatar . '" class="avatarep_img_contributor" alt="'.htmlspecialchars_uni($user['userusername']).'"'.$onerror.' />',			
-			'username' => htmlspecialchars_uni($user['userusername']),
-			'profilelink' => get_profile_link($user['uid']),
-			'uid' => (int)$user['uid'],
-			'usergroup' => (int)$user['usergroup'],
-			'displaygroup' => (int)$user['displaygroup']
+			'avatarep' => '<img src="' . $avatar . '" class="avatarep_img'.$css.'" alt="'.htmlspecialchars_uni($username).'"'.$onerror.' />',
+			'avatarep_contributor' => '<img src="' . $avatar . '" class="avatarep_img_contributor" alt="'.htmlspecialchars_uni($username).'"'.$onerror.' />',			
+			'username' => htmlspecialchars_uni($username),
+			'profilelink' => get_profile_link(),
+			'uid' => $uid,
+			'usergroup' => $usergroup,
+			'displaygroup' => $displaygroup
 		);
 	}
 	
