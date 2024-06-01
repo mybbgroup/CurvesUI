@@ -1113,7 +1113,7 @@ function avatarep_threads()
 					$avatar_thread = "images/default_avatar.png";
 				else
 					$avatar_thread = htmlspecialchars_uni($avatar_thread);
-				$post['avatarep_title'] = $lang->sprintf($lang->avatarep_user_alt_thread_contributor, $avatarep['username']);
+				$post['avatarep_title'] = $lang->sprintf($lang->avatarep_user_alt, $avatarep['username']);
 				$avatarep_thread = $avatarep['avatarep_contributor'];
 			}
 		}
