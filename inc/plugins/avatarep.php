@@ -29,7 +29,7 @@ if(defined("THIS_SCRIPT"))
 	}
 	else if(THIS_SCRIPT == 'showthread.php')
 	{
-		if(isset($settings['sidebox5']) && ($settings['sidebox5'] == 0 || $settings['sidebox5'] == 1)
+		if(isset($settings['sidebox5']) && ($settings['sidebox5'] == 0 || $settings['sidebox5'] == 1))
 		$plugins->add_hook('showthread_end', 'avatarep_portal_sb');
 		$plugins->add_hook('showthread_end', 'avatarep_threads');
 		$plugins->add_hook('showthread_end', 'avatarep_similar_threads');
