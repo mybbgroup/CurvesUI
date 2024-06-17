@@ -622,32 +622,31 @@ function avatarep_format_avatar($user, $css="")
 	$uid          = isset($user['uid'         ]) ? (int)$user['uid'         ] : 0;
 	$usergroup    = isset($user['usergroup'   ]) ? (int)$user['usergroup'   ] : 0;
 	$displaygroup = isset($user['displaygroup']) ? (int)$user['displaygroup'] : 0;
+	$ret = array(
+		'profilelink'  => get_profile_link($uid),
+		'uid'          => $uid,
+		'usergroup'    => $usergroup,
+		'displaygroup' => $displaygroup,
+		'username'     => htmlspecialchars_uni($username),
+	);
 	if($avatar == false)
 	{
-		return array(
+		$ret = array_merge($ret, array(
 			'avatar' => $default_avatar,
 			'avatarep' => '<img class="avatarep_bg'.$css.'" alt="'.htmlspecialchars_uni($username).'" data-name="'.htmlspecialchars_uni($username).'" />',
-			'avatarep_contributor' => '<img class="avatarep_bg avatarep_img_contributor" alt="'.htmlspecialchars_uni($username).'" data-name="'.htmlspecialchars_uni($username).'" />',			
-			'username' => htmlspecialchars_uni($username),
-			'profilelink' => get_profile_link($uid),
-			'uid' => $uid,
-			'usergroup' => $usergroup,
-			'displaygroup' => $displaygroup
-		);
+			'avatarep_contributor' => '<img class="avatarep_bg avatarep_img_contributor" alt="'.htmlspecialchars_uni($username).'" data-name="'.htmlspecialchars_uni($username).'" />',
+		));
 	}
 	else
 	{
-		return array(
+		$ret = array_merge($ret, array(
 			'avatar' => $avatar,
 			'avatarep' => '<img src="' . $avatar . '" class="avatarep_img'.$css.'" alt="'.htmlspecialchars_uni($username).'"'.$onerror.' />',
-			'avatarep_contributor' => '<img src="' . $avatar . '" class="avatarep_img_contributor" alt="'.htmlspecialchars_uni($username).'"'.$onerror.' />',			
-			'username' => htmlspecialchars_uni($username),
-			'profilelink' => get_profile_link(),
-			'uid' => $uid,
-			'usergroup' => $usergroup,
-			'displaygroup' => $displaygroup
-		);
+			'avatarep_contributor' => '<img src="' . $avatar . '" class="avatarep_img_contributor" alt="'.htmlspecialchars_uni($username).'"'.$onerror.' />',
+		));
 	}
+
+	return $ret;
 }
 
 // Avatar en foros
