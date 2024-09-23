@@ -12,12 +12,12 @@ if(defined("THIS_SCRIPT") && THIS_SCRIPT == 'index.php')
 
 function tpref_info()
 {
-	global $mybb, $config;
+	global $mybb;
 	if(!empty($mybb->settings['tpref_enable']))
 	{
 		$config = '<div style="float: right;"><span style="color:Green; padding: 21px; text-decoration: none;">Plugin Working</span></div>';
 	}
-	else if(empty($mybb->settings['tpref_enable']))
+	else
 	{
 		$config = '<div style="float: right;"><span style="color:Red; padding: 21px; text-decoration: none;">Plugin Disabled</span></div>';
 	}	

@@ -4277,25 +4277,7 @@ $(function() {
 <a class="links" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-attach" role="button"><i class="fa-solid fa-paperclip"></i> &nbsp;{$lang->attachments}</a>		
 {$pollbox}
 <button type="submit" class="btn-thread" name="previewpost" value="{$lang->preview_post}" tabindex="5"><i class="fa-solid fa-pen"></i> &nbsp;{$lang->preview_post}</button>
-{$captcha}
-		
 
-<!-- pollop -->
-<div id="collapse-pollop" class="collapse mt-4">
-<div class="bg-nav p-2 rounded text-16 d-block d-sm-block d-md-block d-lg-none mb-3">{$lang->poll}</div>
-<div class="row g-3 border-bottom m-auto pb-4 pt-0 mb-2">
-<div class="col-lg-3 d-none d-sm-none d-md-none d-lg-block text-center text-sm-center text-md-center text-lg-end border-end text-16 fw-bold pe-3 me-3">
-{$lang->poll}
-</div>
-<div class="col">
-<div class="text-desc mb-3">{$lang->poll_desc}</div>
-<label><input type="checkbox" class="form-check-input" name="postpoll" value="1" {$postpollchecked} />&nbsp; {$lang->poll_check}</label>	
-<div class="mt-3">{$lang->num_options}<input type="text" class="form-control border form-control-sm border" style="width: 250px" name="numpolloptions" value="{$numpolloptions}" size="10" /> &nbsp;{$lang->max_options}
-</div>	
-</div>
-</div>
-</div>
-<!-- pollop -->	
  <!-- attach -->
 <div id="collapse-attach" class="collapse mt-4">
 <div class="bg-nav p-2 rounded text-16 d-block d-sm-block d-md-block d-lg-none mb-3">{$lang->attachments}</div>
@@ -4309,20 +4291,6 @@ $(function() {
 </div>
 </div>
 <!-- attach -->
- <!-- modop -->
-<div id="collapse-modop" class="collapse mt-4">
-<div class="bg-nav p-2 rounded text-16 d-block d-sm-block d-md-block d-lg-none mb-3">{$lang->mod_options}</div>
-<div class="row g-3 border-bottom m-auto pb-4 pt-0 mb-2">
-<div class="col-lg-3 d-none d-sm-none d-md-none d-lg-block text-center text-sm-center text-md-center text-lg-end border-end text-16 fw-bold pe-3 me-3">
-{$lang->mod_options}
-</div>
-<div class="col">
-{$closeoption}
-{$stickoption}
-</div>
-</div>
-</div>
-<!-- modop -->	
 <!-- postop -->
 <div id="collapse-postop" class="collapse mt-4">
 <div class="bg-nav p-2 rounded text-16 d-block d-sm-block d-md-block d-lg-none mb-3">{$lang->post_options}</div>
@@ -13378,6 +13346,8 @@ select.size = select.length;
 	var quickdelete_confirm = "{$lang->quickdelete_confirm}";
 	var quickrestore_confirm = "{$lang->quickrestore_confirm}";
 	var allowEditReason = "{$mybb->settings['alloweditreason']}";
+	var thread_deleted = "{$thread_deleted}";
+	var visible_replies = "{$thread['replies']}";
 	lang.save_changes = "{$lang->save_changes}";
 	lang.cancel_edit = "{$lang->cancel_edit}";
 	lang.quick_edit_update_error = "{$lang->quick_edit_update_error}";
