@@ -4468,7 +4468,7 @@ Post.dropZone.parents().eq(1).hide();
 
 
 <form method="POST" action="{$lang_redirect_url['location']}" id="lang_select">
-	{$theme_redirect_url['form_html']}
+	{$lang_redirect_url['form_html']}
 	<input type="hidden" name="my_post_key" value="{$mybb->post_code}" />
 	<div class="row g-1">
 	<div class="col-auto align-self-center">
@@ -5270,13 +5270,11 @@ $(".forumjump").on('change', function() {
 	<input type="checkbox" class="form-check-input" name="remember" value="yes" /> {$lang->remember_me}?
 </div>
 						
-{$captcha}
 </div>
 <div class="card-footer text-center">
 
 		<button type="submit" class="btn btn-primary" name="submit" value="{$lang->login}"><i class="fa-solid fa-right-to-bracket"></i> &nbsp;{$lang->login}</button>
 	<input type="hidden" name="action" value="do_login" />
-<input type="hidden" name="url" value="{$redirect_url}" />
 <input name="my_post_key" type="hidden" value="{$mybb->post_code}" />
 </form>
 	</div>]]></template>
@@ -13065,7 +13063,7 @@ select.size = select.length;
 		<div class="col align-self-center ms-2">
 			
 			
-	<h6 class="mb-0 text-forum"><a href="{$post_url}{$highlight}#pid{$post['pid']}">{$post['subject']}</a>{$thread['multipage']}</h6>
+	<h6 class="mb-0 text-forum"><a href="{$post_url}{$highlight}#pid{$post['pid']}">{$post['subject']}</a></h6>
 			<div class="links small"><span class="text-muted">{$lang->by}</span> {$post['profilelink']} <span class="text-muted">{$lang->forum}</span> {$post['forumlink']}</div>
 		</div>
 			
