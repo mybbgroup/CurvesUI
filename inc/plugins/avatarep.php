@@ -1224,7 +1224,7 @@ function avatarep_format_names(&$content)
 			{
 				$username = format_name($avatarep['username'], $avatarep['usergroup'], $avatarep['displaygroup']);
 				$format = "#{$avatarep['username']}{$avatarep['uid']}#";
-				if(is_array($cache->cache['groups']) && is_array($cache->cache['mods']))
+				if(isset($cache->cache['groups']) && is_array($cache->cache['groups']) && is_array($cache->cache['mods']))
 				{
 					if(in_array($avatarep['uid'], $cache->cache['mods']))
 					{

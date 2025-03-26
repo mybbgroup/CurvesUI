@@ -60,4 +60,3 @@ function defaultavatarfix()
 	 }
 }
 $plugins->add_hook("global_start", "defaultavatarfix");
-?>
