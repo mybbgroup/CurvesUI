@@ -4277,7 +4277,25 @@ $(function() {
 <a class="links" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-attach" role="button"><i class="fa-solid fa-paperclip"></i> &nbsp;{$lang->attachments}</a>		
 {$pollbox}
 <button type="submit" class="btn-thread" name="previewpost" value="{$lang->preview_post}" tabindex="5"><i class="fa-solid fa-pen"></i> &nbsp;{$lang->preview_post}</button>
+{$captcha}
+		
 
+<!-- pollop -->
+<div id="collapse-pollop" class="collapse mt-4">
+<div class="bg-nav p-2 rounded text-16 d-block d-sm-block d-md-block d-lg-none mb-3">{$lang->poll}</div>
+<div class="row g-3 border-bottom m-auto pb-4 pt-0 mb-2">
+<div class="col-lg-3 d-none d-sm-none d-md-none d-lg-block text-center text-sm-center text-md-center text-lg-end border-end text-16 fw-bold pe-3 me-3">
+{$lang->poll}
+</div>
+<div class="col">
+<div class="text-desc mb-3">{$lang->poll_desc}</div>
+<label><input type="checkbox" class="form-check-input" name="postpoll" value="1" {$postpollchecked} />&nbsp; {$lang->poll_check}</label>	
+<div class="mt-3">{$lang->num_options}<input type="text" class="form-control border form-control-sm border" style="width: 250px" name="numpolloptions" value="{$numpolloptions}" size="10" /> &nbsp;{$lang->max_options}
+</div>	
+</div>
+</div>
+</div>
+<!-- pollop -->	
  <!-- attach -->
 <div id="collapse-attach" class="collapse mt-4">
 <div class="bg-nav p-2 rounded text-16 d-block d-sm-block d-md-block d-lg-none mb-3">{$lang->attachments}</div>
@@ -4291,6 +4309,20 @@ $(function() {
 </div>
 </div>
 <!-- attach -->
+ <!-- modop -->
+<div id="collapse-modop" class="collapse mt-4">
+<div class="bg-nav p-2 rounded text-16 d-block d-sm-block d-md-block d-lg-none mb-3">{$lang->mod_options}</div>
+<div class="row g-3 border-bottom m-auto pb-4 pt-0 mb-2">
+<div class="col-lg-3 d-none d-sm-none d-md-none d-lg-block text-center text-sm-center text-md-center text-lg-end border-end text-16 fw-bold pe-3 me-3">
+{$lang->mod_options}
+</div>
+<div class="col">
+{$closeoption}
+{$stickoption}
+</div>
+</div>
+</div>
+<!-- modop -->	
 <!-- postop -->
 <div id="collapse-postop" class="collapse mt-4">
 <div class="bg-nav p-2 rounded text-16 d-block d-sm-block d-md-block d-lg-none mb-3">{$lang->post_options}</div>
@@ -4352,8 +4384,7 @@ Post.dropZone.parents().eq(1).hide();
 <input type="hidden" name="pid" value="{$pid}" />
 			</div>
 		</div>
-		</div></div>
-</form>]]></template>
+		</div></div>]]></template>
 		<template name="editpost_disablesmilies" version="1837"><![CDATA[<input type="checkbox" class="form-check-input" name="postoptions[disablesmilies]" value="1" tabindex="8"{$postoptionschecked['disablesmilies']} /> {$lang->options_disablesmilies}]]></template>
 		<template name="editpost_postoptions" version="1837"><![CDATA[<a class="links" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-postop" role="button"><i class="fa-solid fa-gear"></i> &nbsp;{$lang->post_options}</a>]]></template>
 		<template name="editpost_reason" version="1837"><![CDATA[<input type="text" class="form-control border mb-3" name="editreason" size="40" placeholder="{$lang->editreason}" maxlength="150" value="{$reason}" tabindex="5" />]]></template>
@@ -4457,10 +4488,10 @@ Post.dropZone.parents().eq(1).hide();
 	<script src="jscripts/boot.js"></script>
 	
 	
-	</div>
 
-<!-- new -->
-	</div>]]></template>
+
+
+	]]></template>
 		<template name="footer_contactus" version="1837"><![CDATA[<div class="col-lg d-flex flex-column justify-content-between">
 	<a href="{$mybb->settings['contactlink']}" class="links"><i class="fa-solid fa-envelope"></i> &nbsp;{$lang->bottomlinks_contactus}</a>
 </div>]]></template>
@@ -4468,7 +4499,7 @@ Post.dropZone.parents().eq(1).hide();
 
 
 <form method="POST" action="{$lang_redirect_url['location']}" id="lang_select">
-	{$lang_redirect_url['form_html']}
+	{$theme_redirect_url['form_html']}
 	<input type="hidden" name="my_post_key" value="{$mybb->post_code}" />
 	<div class="row g-1">
 	<div class="col-auto align-self-center">
@@ -4983,7 +5014,9 @@ Post.dropZone.parents().eq(1).hide();
 		&nbsp;
 	</div>
 {$inlinemod}
-</div>]]></template>
+</div>
+
+{$inline_edit_js}]]></template>
 		<template name="forumdisplay_threadlist_prefixes" version="1837"><![CDATA[<div class="col-lg-auto align-self-center">
 <select name="prefix" class="form-select border form-select-sm pe-5">
 <option value="-2"{$default_selected['any']}>{$lang->prefix_any}</option>
@@ -5094,10 +5127,10 @@ $(".forumjump").on('change', function() {
 					<button class="btn-sm btn-search border-0 rounded-start-0 border-start-0 border-end" style="border-right: 0px!important" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
 														<input type="hidden" name="action" value="do_search" />
 							<input type="hidden" name="postthread" value="1" />
-						</form>
+						
 					
 					<a class="btn btn-search pt-2 border-0 btn-sm text-muted" href="{$mybb->settings['bburl']}/search.php" style="border-left: 0px!important"><i class="fa-solid fa-gear"></i></a>
-					</div>
+					</div></form>
 				</div>
 				
 				<div class="d-block d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none">
@@ -5119,7 +5152,7 @@ $(".forumjump").on('change', function() {
 					<button class="btn-sm btn-search border-0 rounded-start-0 border-start-0" type="submit" style="border-radius: 0px"><i class="fa-solid fa-magnifying-glass"></i></button>
 				<input type="hidden" name="action" value="do_search" />
 							<input type="hidden" name="postthread" value="1" />
-				</form></div>
+				</div></form>
 						</div>
 					
 				</div>
@@ -5130,9 +5163,6 @@ $(".forumjump").on('change', function() {
 				
 				</div>
 		</div>
-		</div>
-	</div>
-
 
 
 <div class="container-fluid navigation m-0 p-0 mb-0">
@@ -5270,11 +5300,13 @@ $(".forumjump").on('change', function() {
 	<input type="checkbox" class="form-check-input" name="remember" value="yes" /> {$lang->remember_me}?
 </div>
 						
+{$captcha}
 </div>
 <div class="card-footer text-center">
 
 		<button type="submit" class="btn btn-primary" name="submit" value="{$lang->login}"><i class="fa-solid fa-right-to-bracket"></i> &nbsp;{$lang->login}</button>
 	<input type="hidden" name="action" value="do_login" />
+<input type="hidden" name="url" value="{$redirect_url}" />
 <input name="my_post_key" type="hidden" value="{$mybb->post_code}" />
 </form>
 	</div>]]></template>
@@ -5974,7 +6006,7 @@ if(use_xmlhttprequest == "1")
 		</div>
 		<div class="col">
 			<h6 class="mb-0">{$user['profilelink']}</h6>
-			{$user['usertitle']} <br />{$usergroup['groupimage']}<span class="small">
+			{$user['usertitle']} <br />{$user['groupimage']}<span class="small">
 			<span class="text-muted">{$lang->posts}</span> {$user['postnum']} / <span class="text-muted">{$lang->threads}</span> {$user['threadnum']}<br />
 			<span class="text-muted">{$lang->joined}:</span> {$user['regdate']}<br />
 			<span class="text-muted">{$lang->lastvisit}:</span> {$user['lastvisit']}</span>
@@ -6511,6 +6543,8 @@ if(use_xmlhttprequest == "1")
 {$header}
 	
 <div class="container-md">
+{$inline_errors}
+{$member_loggedin_notice}	
 <div class="card">
 <div class="card-body pt-0">	
 	
@@ -10386,7 +10420,7 @@ Post.dropZone.parents().eq(1).hide();
 			<a href="online.php?sortby=time"><i class="fa-solid fa-clock"></i> &nbsp;{$lang->time}</a>
 		</div>
 		<div class="col-4 text-lg-end">
-			</a><a href="online.php?sortby=location"><i class="fa-solid fa-location-dot"></i> &nbsp;{$lang->location}</a>	
+			<a href="online.php?sortby=location"><i class="fa-solid fa-location-dot"></i> &nbsp;{$lang->location}</a>	
 		</div></div>
 		</div></div>
 	
@@ -11498,8 +11532,6 @@ img { max-width: 100%; height: auto; }
 	
 	</div>
 	
-</div>
-</div>
 {$footer}
 </body>
 </html>]]></template>
@@ -12174,7 +12206,7 @@ if(use_xmlhttprequest == "1")
 	
 	
 	<div class="mb-3 p-0 pb-4 border-bottom">
-		<input name="to" id="to" value="{$to}" tabindex="1" class="form-control border" placeholder="{$lang->compose_to}"></input>
+		<input name="to" id="to" value="{$to}" tabindex="1" class="form-control border" placeholder="{$lang->compose_to}" />
 	<span style="font-size: 12px" class="text-muted">{$lang->separate_names} {$max_recipients}</span>
 	</div>
 
@@ -12217,10 +12249,9 @@ if(use_xmlhttprequest == "1")
 
 </div>
 	
-</form>
+
 </div></div>
-</div></div>
-</div>
+</div></div></form>
 {$footer}
 <script type="text/javascript">
 <!--
@@ -13063,7 +13094,7 @@ select.size = select.length;
 		<div class="col align-self-center ms-2">
 			
 			
-	<h6 class="mb-0 text-forum"><a href="{$post_url}{$highlight}#pid{$post['pid']}">{$post['subject']}</a></h6>
+	<h6 class="mb-0 text-forum"><a href="{$post_url}{$highlight}#pid{$post['pid']}">{$post['subject']}</a>{$thread['multipage']}</h6>
 			<div class="links small"><span class="text-muted">{$lang->by}</span> {$post['profilelink']} <span class="text-muted">{$lang->forum}</span> {$post['forumlink']}</div>
 		</div>
 			
@@ -13347,7 +13378,7 @@ select.size = select.length;
 	var quickrestore_confirm = "{$lang->quickrestore_confirm}";
 	var allowEditReason = "{$mybb->settings['alloweditreason']}";
 	var thread_deleted = "{$thread_deleted}";
-	var visible_replies = "{$thread['replies']}";
+	var visible_replies = "{$thread['replies']}";									  
 	lang.save_changes = "{$lang->save_changes}";
 	lang.cancel_edit = "{$lang->cancel_edit}";
 	lang.quick_edit_update_error = "{$lang->quick_edit_update_error}";
@@ -14156,10 +14187,9 @@ select.size = select.length;
 			
 			
 		</div>
+	</div>
+	</div>
 </form>
-	</div>
-	</div>
-</div>
 {$footer}
 </body>
 </html>]]></template>
@@ -14295,10 +14325,10 @@ select.size = select.length;
 		
 	</div>
 	</div>
-	</form>
 	</div>
 	</div>
 </div>
+	</form>
 
 {$footer}
 </body>
@@ -14335,10 +14365,10 @@ select.size = select.length;
 </head>
 <body>
 	{$header}
-	<form action="usercp.php" method="post" id="buddy" onsubmit="return UserCP.addBuddy('buddy');">
+	<!-- <form action="usercp.php" method="post" id="buddy" onsubmit="return UserCP.addBuddy('buddy');">
 			<input type="hidden" name="action" value="do_editlists" />
 			<input type="hidden" name="manage" value="buddy" />
-			<input type="hidden" name="my_post_key" value="{$mybb->post_code}" />
+			<input type="hidden" name="my_post_key" value="{$mybb->post_code}" /> -->
 			
 <div class="container-md">
 <div class="row">
@@ -14366,12 +14396,18 @@ select.size = select.length;
 		</div>
 		<div class="col">
 			
+			<form action="usercp.php" method="post" id="buddy" onsubmit="return UserCP.addBuddy('buddy');">
+			<input type="hidden" name="action" value="do_editlists" />
+			<input type="hidden" name="manage" value="buddy" />
+			<input type="hidden" name="my_post_key" value="{$mybb->post_code}" />
+			
 			<div class="input-group">
 			<label class="mb-0">{$lang->username_or_usernames}</label>
 								<div class="text-desc small">{$lang->add_buddies_desc}</div>
 								<input type="text" name="add_username" id="buddy_add_username" class="form-control form-control-sm border rounded" />&nbsp;
 			<button type="submit" id="buddy_submit" value="{$lang->add_to_buddies}" class="btn btn-primary rounded"><i class="fa-solid fa-circle-plus"></i> &nbsp;{$lang->add_to_buddies}</button>
 			</div>
+			</form>
 			<script type="text/javascript">
 							<!--
 								if(use_xmlhttprequest == "1")
@@ -14436,7 +14472,7 @@ select.size = select.length;
 	
 		</div>
 	</div>
-	</form>
+	<!-- </form> -->
 	
 	
 	
@@ -14552,7 +14588,6 @@ select.size = select.length;
 	
 			
 	</div></div>
-</div></div>
 </div>
 	{$footer}
 </body>
@@ -14686,7 +14721,6 @@ select.size = select.length;
 </div>
 	</div></div>
 	</div></div>
-	</div>
 </form>
 {$footer}
 </body>
@@ -14791,10 +14825,10 @@ select.size = select.length;
 <button type="submit" class="btn btn-primary" name="submit" value="{$lang->update_email}"><i class="fa-solid fa-at"></i> &nbsp;{$lang->update_email}</button>
 	</div>
 	</div>
+	</div>
+	</div>
+	</div>
 	</form>
-	</div>
-	</div>
-	</div>
 
 {$footer}
 </body>
@@ -14815,8 +14849,6 @@ select.size = select.length;
 				
 </div>
 <div class="col">
-			
-
 <div class="card mb-4">
 	<div class="card-header bg-white text-dark border-bottom-0 text-19 fw-bold mt-2 pb-0">
 		{$lang->forum_subscriptions}
@@ -14863,12 +14895,23 @@ select.size = select.length;
 		<i class="bi bi-chat"></i>
 	
 	</div>
+
 		<div class="col-5 align-self-center">
+			
 			<a href="{$thread['threadlink']}" style="font-size: 18px; font-weight: 600">{$thread['subject']}</a> <br />
 			<span class="text-muted" style="font-size: 14px">
 				<span class="lastpostbit">{$thread['author']}</span> 
 			</span>
+			
 		</div>
+		<div class="col-auto align-items-center d-flex justify-content-center">
+			
+			{$thread['threadprefix']}
+			
+		</div>
+		
+			
+			
 		<div class="col-2 text-end align-self-center">
 			
 			<span class="text-muted" style="font-size: 14px">{$lang->replies}</span> <span style="font-size: 14px">{$thread['replies']}</span><br />
@@ -14989,9 +15032,9 @@ select.size = select.length;
 	<div class="card-footer text-center">
 		<input type="hidden" name="action" value="do_notepad" />
 <button type="submit" class="btn btn-primary" name="submit" value="{$lang->update_notepad}" /><i class="fa-solid fa-note-sticky"></i> &nbsp;{$lang->update_notepad}</button>
-</form>
+
 </div>
-</div>]]></template>
+</div></form>]]></template>
 		<template name="usercp_options" version="1837"><![CDATA[<html>
 <head>
 <title>{$mybb->settings['bbname']} - {$lang->edit_options}</title>
@@ -15201,7 +15244,6 @@ select.size = select.length;
 	</div>
 	</div>
 	</div>
-	</div>
 </form>
 {$footer}
 </body>
@@ -15336,10 +15378,10 @@ select.size = select.length;
 <button type="submit" class="btn btn-primary" name="submit" value="{$lang->update_password}"><i class="fa-solid fa-key"></i> &nbsp;{$lang->update_password}</button>
 	</div>
 	</div>
+	</div>
+	</div>
+	</div>
 	</form>
-	</div>
-	</div>
-	</div>
 	
 {$footer}
 </body>
