@@ -12,8 +12,8 @@ if(defined("THIS_SCRIPT") && THIS_SCRIPT == 'index.php')
 
 function tpref_info()
 {
-	global $mybb;
-	if(!empty($mybb->settings['tpref_enable']))
+	global $mybb, $config;
+	if(isset($mybb->settings['tpref_enable']) && $mybb->settings['tpref_enable'] == 1)
 	{
 		$config = '<div style="float: right;"><span style="color:Green; padding: 21px; text-decoration: none;">Plugin Working</span></div>';
 	}
@@ -23,9 +23,9 @@ function tpref_info()
 	}	
     return array(
         'name'        	=> "Thread prefixes",
-        'description' 	=> "Add prefixes on your index if available..." . $config,
+        'description' 	=> "Add prefixes on your index if available " . $config,
         'website'     	=> 'https://mybb.com',
-		'version'     	=> '1.1',
+		'version'     	=> '1.2',
 		'author'      	=> 'Whiteneo',
 		'authorsite'  	=> '',
 		"compatibility" => "18*",
@@ -91,7 +91,8 @@ function tpref_activate()
 
 	require_once MYBB_ROOT.'inc/adminfunctions_templates.php';	
 	// Insert all template changes for templates that exist on MyBB...
-    find_replace_templatesets("forumbit_depth2_forum_lastpost", '#'.preg_quote('{$lastpost_subject}').'#', '{$forum[\'tpicon\']}{$forum[\'tpprefix\']}{$lastpost_subject}', 0);	
+	find_replace_templatesets("forumbit_depth1_forum_lastpost", '#'.preg_quote('{$lastpost_subject}').'#', '{$forum[\'tpicon\']}{$forum[\'tpprefix\']}{$lastpost_subject}');	
+    find_replace_templatesets("forumbit_depth2_forum_lastpost", '#'.preg_quote('{$lastpost_subject}').'#', '{$forum[\'tpicon\']}{$forum[\'tpprefix\']}{$lastpost_subject}');	
 }
 
 function tpref_deactivate()
@@ -100,7 +101,9 @@ function tpref_deactivate()
 	$db->delete_query("settinggroups", "name='tpref'");
 	$db->delete_query("settings","name IN ('tpref_enable','tpref_prefix','tpref_icon')");
 	rebuild_settings();
-	require_once MYBB_ROOT.'inc/adminfunctions_templates.php';	
+	require_once MYBB_ROOT.'inc/adminfunctions_templates.php';
+    find_replace_templatesets("forumbit_depth1_forum_lastpost", '#'.preg_quote('{$forum[\'tpicon\']}').'#', '', 0);	
+    find_replace_templatesets("forumbit_depth1_forum_lastpost", '#'.preg_quote('{$forum[\'tpprefix\']}').'#', '', 0);			
     find_replace_templatesets("forumbit_depth2_forum_lastpost", '#'.preg_quote('{$forum[\'tpicon\']}').'#', '', 0);	
     find_replace_templatesets("forumbit_depth2_forum_lastpost", '#'.preg_quote('{$forum[\'tpprefix\']}').'#', '', 0);			
 }
@@ -126,6 +129,8 @@ function forumlist_tprefix(&$_f)
 	{
 		return false;
 	}
+	$_f['tpprefix'] = "";
+	$_f['tpicon'] = "";
 	if(!isset($cache->cache['tprefix_cache']))
 	{
 		$cache->cache['tprefix_cache'] = [];
@@ -141,7 +146,7 @@ function forumlist_tprefix(&$_f)
 				$forum = iterator_to_array($forum);
 				$tprefix_cache[$forum['fid']] = $forum;
 				$depth = 0;
-				if(!empty($private_forums[$forum['fid']]['lastpost']))
+				if(isset($private_forums[$forum['fid']]['lastpost']))
 				{
 					$forum['lastpost'] = $private_forums[$forum['fid']]['lastpost'];
 					$lastpost_data = array(
@@ -217,23 +222,23 @@ function forumlist_tprefix(&$_f)
 		// Aplicamos los cambios! Reemplazando las lineas de código para guardarlas en cache...
 		$cache->cache['tprefix_cache'] = $tprefix_cache;	
 	}
-
-	$_f['tpprefix'] = $_f['tpicon'] = '';
-	if(isset($cache->cache['tprefix_cache'][$_f['fid']]['tprefix_fid'])) {
+	
+	if(isset($cache->cache['tprefix_cache'][$_f['fid']]['tprefix_fid']))
+	{
 		$_f['tprefix_lastpost'] = $cache->cache['tprefix_cache'][$_f['fid']]['tprefix_fid'];
 		if($mybb->settings['tpref_icon'] == 1)
 		{
 			$_f['tpicon'] = $_f['tprefix_lastpost']['tpicon'];
 			if(!empty($_f['tpicon'])){
 				$_f['tpicon'] = "<img src=\"{$_f['tpicon']}\" alt=\"Thread icon\" width=\"16\" height=\"16\" />&nbsp;";
-			}
+			}		
 		}
 		if($mybb->settings['tpref_prefix'] == 1)
-		{
+		{	
 			$_f['pref'] = $_f['tprefix_lastpost']['tpprefix'];
 			$_f['tpstyle'] = $_f['tprefix_lastpost']['tpstyle'];
 			if(!empty($_f['tpstyle'])){
-				$_f['tpprefix'] = $_f['tpstyle'] . "&nbsp;";
+				$_f['tpprefix'] = $_f['tpstyle'] . "&nbsp;";			
 			}
 		}
 	}
