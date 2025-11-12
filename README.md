@@ -7,13 +7,14 @@ Concept: [Justin Soltesz](https://github.com/justinsoltesz) for MyBB 1.9
 
 Included / Recomended Plugins:
 
+- MyBB Likes by Matty Wjeisz
 - ['Last Poster Avatar'](https://community.mybb.com/mods.php?action=view&pid=74) by Whiteneo
 - [Default Avatar Fix](https://community.mybb.com/mods.php?action=view&pid=375) by SvePu
 
 **IMPORTANT**
 
 In order to achieve proper functionality, you MUST install and activate the following plugins in your Admin CP PRIOR to uploading the theme files.
-(included in the download - you only need to activate them)
+(included in the download - you only need to activate them). If you do not want the MyBB Likes plugin, simply deactivate it from the Admin CP.
 
 
 **INSTRUCTIONS**
