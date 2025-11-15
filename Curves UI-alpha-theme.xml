@@ -2856,11 +2856,6 @@ ul.thread_tools li.poll {
 		</stylesheet>
 	</stylesheets>
 	<templates>
-		<template name="postlikes_like_guest_count" version="1839"><![CDATA[<span class="like_count_guest">{$like_count} Likes</span>]]></template>
-		<template name="postlikes_like_count" version="1839"><![CDATA[<span class="postlinks">{$like_count}</span>]]></template>
-		<template name="postlikes_unlike_link" version="1839"><![CDATA[<a href="{$mybb->settings['bburl']}/misc.php?action=post_like&unlike=1&pid={$post['pid']}" class="postlinks"><i class="fa-solid fa-heart"></i>&nbsp;</a>]]></template>
-		<template name="postlikes_like_link" version="1839"><![CDATA[<a href="{$mybb->settings['bburl']}/misc.php?action=post_like&pid={$post['pid']}" class="postlinks"><i class="fa-regular fa-heart"></i>&nbsp;</a>]]></template>
-		<template name="postlikes_like_count_guest" version="1839"><![CDATA[<span class="postlinks"><i class="fa-solid fa-heart"></i>&nbsp;{$like_count} </span>]]></template>
 		<template name="warnings_warn_type" version="1830"><![CDATA[<input type="radio" name="type" value="{$type['tid']}" {$checked} class="types_check form-check-input" onclick="checkType();" /> {$type['title']} {$points}</label></dt>
 					<div id="type_{$type['tid']}" class="types">
 						<div class="mt-3 text-muted">{$lang->new_warning_level}</div>
