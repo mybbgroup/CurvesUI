@@ -7976,9 +7976,7 @@ if(use_xmlhttprequest == "1")
 <div class="row mt-0 pt-0 mb-0 pb-0">
 <div class="col-auto align-self-center small text-start pe-0 me-0">
 {$post['button_multiquote']}</div>	
-<div class="col-auto align-self-center small text-start pe-0 me-0">	
-{$post['like_link']}
-	</div>
+
 
 
 <div class="col align-self-center small text-end">
@@ -8077,9 +8075,7 @@ if(use_xmlhttprequest == "1")
 <div class="row mt-0 pt-0 mb-0 pb-0">
 <div class="col-auto align-self-center small text-start pe-0 me-0">
 {$post['button_multiquote']}</div>	
-<div class="col-auto align-self-center small text-start pe-0 me-0">	
-{$post['like_link']}
-	</div>
+
 
 
 <div class="col align-self-center small text-end">
