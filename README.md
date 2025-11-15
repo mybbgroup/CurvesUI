@@ -5,7 +5,7 @@ Author: [MattyWjeisz](https://github.com/MattyWjeisz)
 
 Concept & Credits: 
 [Justin Soltesz](https://github.com/justinsoltesz) for MyBB 1.9 
-MyBBTurkce.com ([http:](https://mybbturkce.com/))
+[MyBBTurkce.com] (https://mybbturkce.com/)
 
 
 Included / Recomended Plugins:
