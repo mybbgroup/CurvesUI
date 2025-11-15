@@ -14150,7 +14150,7 @@ $(".forumjump").on('change', function() {
 				<div class="col-auto align-self-center">
 					<avatarep_uid_[{$thread['lastposteruid']}]>
 				</div>
-				<div class="col align-self-center me-2">{$lastposterlink}<br /><span class="small text-muted text-uppercase">{$lastpostdate}</span> {$modbit}
+				<div class="col align-self-center me-2">{$lastposterlink}<br /><span class="small text-muted text-uppercase"><a href="{$thread['lastpostlink']}" style="color:#999!important; text-decoration: none!important">{$lastpostdate}</a></span> {$modbit}
 					</div>
 				</div>
 				
