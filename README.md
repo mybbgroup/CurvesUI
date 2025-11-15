@@ -3,7 +3,10 @@ MyBB 1.9 concept theme for MyBB 1.8
 
 Author: [MattyWjeisz](https://github.com/MattyWjeisz) 
 
-Concept: [Justin Soltesz](https://github.com/justinsoltesz) for MyBB 1.9
+Concept & Credits: 
+[Justin Soltesz](https://github.com/justinsoltesz) for MyBB 1.9 
+MyBBTurkce.com ([http:](https://mybbturkce.com/))
+
 
 Included / Recomended Plugins:
 
