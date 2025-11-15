@@ -11,7 +11,6 @@ MyBBTurkce.com (https://mybbturkce.com/)
 
 Included / Recomended Plugins:
 
-- MyBB Likes by Matty Wjeisz
 - ['Last Poster Avatar'](https://community.mybb.com/mods.php?action=view&pid=74) by Whiteneo
 - [Default Avatar Fix](https://community.mybb.com/mods.php?action=view&pid=375) by SvePu
 
