@@ -376,6 +376,10 @@ height: 50px;width: 50px;border-radius: 6px
 	transition: none!important;
 }
 
+			.subject_new {
+	font-weight: bold;
+}
+
 a {
 	color: #007fd0;
 	text-decoration: none;
