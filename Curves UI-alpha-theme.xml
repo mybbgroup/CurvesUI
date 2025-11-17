@@ -12786,12 +12786,6 @@ if(use_xmlhttprequest == "1")
 				{$findthreads}
 			</div>
 		</div>
-		<div class="row py-3 border-bottom">
-			<div class="col">
-				<strong>Total Likes Received:</strong><br />
-				{$memprofile['post_likes']}
-			</div>
-		</div>
 		{$reputation}
 		{$referrals}
 				<div class="row py-3 border-bottom">
