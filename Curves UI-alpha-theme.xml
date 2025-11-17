@@ -5999,7 +5999,9 @@ ul.thread_tools li.poll {
 		
 				
 			</div>
+	<div class="mt-2">
 	{$multipage}
+		</div>
 	</div>
 		{$footer}
 		</body>
