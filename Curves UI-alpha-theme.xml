@@ -13648,15 +13648,6 @@ if(use_xmlhttprequest == "1")
 	
 	<div class="container-md">
 		
-
-		
-
-<div class="row mt-4 border-top border-bottom py-3 m-auto">
-	<div class="col">
-		<i class="fa-brands fa-github" title="MyBB Group @ GitHub"></i> &nbsp;<a href="https://github.com/mybbgroup" target="_blank">MyBB Group</a>
-		<i class="fa-brands fa-discord ms-3" title="Add us on Discord" style="color: #7289DA"></i> &nbsp;matty9719
-		</div>
-		</div>
 	
 <div class="mt-4">
 {$forums}
