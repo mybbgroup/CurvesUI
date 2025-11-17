@@ -641,8 +641,8 @@ h5 {
 }
 
 .text-nav {
-	font-family: 'asap', sans-serif;
-	font-size: 2.2em;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 2.2rem;
 	font-weight: normal;
 	line-height: 1.3;
 	color: #222;
