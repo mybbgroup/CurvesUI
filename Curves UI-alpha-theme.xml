@@ -8879,7 +8879,7 @@ Post.dropZone.parents().eq(1).hide();
 </div>]]></template>
 		<template name="nav_bit" version="1837"><![CDATA[<a href="{$navbit['url']}">{$navbit['name']}</a>{$sep}]]></template>
 		<template name="nav_bit_active" version="1837"><![CDATA[<br />
-<div class="border-bottom border-2 mb-0 mt-3 rounded-0">
+<div class="border-bottom border-2 mb-0 mt-2 rounded-0">
 	<h3 class="text-nav">{$navbit['name']}</h3>
 	</div>]]></template>
 		<template name="nav_dropdown" version="1837"><![CDATA[]]></template>
