@@ -372,6 +372,10 @@ height: 50px;width: 50px;border-radius: 6px
 
 }
 
+.sort_text {
+	font-size: 0.9em;
+}
+
 .collapsing {
 	transition: none!important;
 }
