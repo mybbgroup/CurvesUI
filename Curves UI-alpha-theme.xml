@@ -14065,7 +14065,7 @@ $(".forumjump").on('change', function() {
 <div class="card border-0">
 <div class="card-header py-3 bg-nav rounded border-bottom-0">
 	
-	<div class="row">
+	<div class="row sort_text">
 		<div class="col">
 	<p class="mb-0"><a href="{$sorturl}&amp;sortby=subject&amp;order=asc">{$lang->thread}</a> {$orderarrow['subject']} &mdash; <a href="{$sorturl}&amp;sortby=starter&amp;order=asc">{$lang->author}</a></p>
 		</div>
