@@ -14700,7 +14700,7 @@ Post.dropZone.parents().eq(1).hide();
 
 
 <form method="POST" action="{$lang_redirect_url['location']}" id="lang_select">
-	{$theme_redirect_url['form_html']}
+	{$lang_redirect_url['form_html']}
 	<input type="hidden" name="my_post_key" value="{$mybb->post_code}" />
 	<div class="row g-1">
 	<div class="col-auto align-self-center">
