@@ -14799,7 +14799,7 @@ Post.dropZone.parents().eq(1).hide();
 	
 
 	
-	<script src="jscripts/boot.js"></script>
+	<script src="{$mybb->settings['bburl']}/jscripts/boot.js"></script>
 	
 	
 	</div>
